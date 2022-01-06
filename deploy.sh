@@ -11,4 +11,4 @@ git add .
 git commit -m `date +%Y%m%d-%H%M%S`
  
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:bityuan/bty-docs.git main
+git push -f git@github.com:bityuan/bty-docs.git master:main
