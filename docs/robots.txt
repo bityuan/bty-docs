@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://btydocs.github.io/bty-docs/sitemap.xml
+Sitemap: https://btydocs.github.io/sitemap.xml

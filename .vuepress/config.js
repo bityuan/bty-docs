@@ -4,11 +4,11 @@ const { getFilesName} = require('../utils/fileName')
 module.exports = config({
   title: "BitYuan",
   description: "A demo for vuepress-theme-hope",
-  base: '/bty-docs/',
+  // base: '/bty-docs/',
   dest: "./docs",
-  head: [
-    ['link', {rel:'icon',href:'/favicon.ico'}]
-  ],
+  // head: [
+  //   ['link', {rel:'icon',href:'/favicon.ico'}]
+  // ],
   // head: [
   //   ["script", { src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" }],
   //   [
