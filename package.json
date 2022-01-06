@@ -1,0 +1,17 @@
+{
+  "name": "bty_docs",
+  "version": "1.0.0",
+  "description": "A project of vuepress-theme-hope",
+  "license": "MIT",
+  "scripts": {
+    "build": "vuepress build .",
+    "clean-dev": "vuepress dev . --no-cache",
+    "dev": "vuepress dev .",
+    "eject-theme": "vuepress eject-hope .",
+    "deploy": "bash deploy.sh"
+  },
+  "devDependencies": {
+    "vuepress": "^1.9.5",
+    "vuepress-theme-hope": "^1.22.0"
+  }
+}

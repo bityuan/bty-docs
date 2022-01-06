@@ -1,0 +1,84 @@
+// import icon
+@import '//at.alicdn.com/t/font_2410206_kxwb6og9m5.css'
+
+main.home{
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 116px)
+  background: url('/bg.svg') no-repeat;
+  background-size: cover;
+  max-width:100%!important;
+}
+.page .page-info {
+  line-height: 3em;
+  span{
+    margin-right: 10px;
+    line-height: inherit!important;
+    svg{
+      margin-right:  .5em!important;
+    }
+  }
+}
+
+.nav-links .nav-item{
+  margin-left: 1.5rem !important;
+}
+
+.hero-info a.nav-link{
+  padding: .7rem 1.5rem!important;
+  line-height: normal
+}
+.dropdown-item a.nav-link{
+  font-size: .9rem
+}
+
+.home .hero .external{
+    background: #f6f6f6;
+    color: #4f5959!important;
+    position: relative;
+    place-content: center;
+    place-items: center;
+    width: fit-content;
+    letter-spacing: .05em;
+    border: 1px solid #f6f6f6!important;
+    text-decoration: none;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+.home .hero .external:hover{
+  background: #f6f6f6!important;
+}
+
+.page-title h1{
+  font-weight: bold!important;
+}
+
+header.hero img{
+  margin-top: -80px!important;
+  width 100px
+}
+.hero-info #main-title,.hero-info .description{
+  margin-left: 15px!important
+}
+// .depth-1 .sidebar-heading span.title{
+//   font-size: .9em
+// }
+.sidebar-heading span.title{
+  font-size: .9em
+}
+.depth-0 >.sidebar-heading span.title{
+  font-size: 1.1em
+}
+@media screen and (max-width: 419px){
+  main.home{
+    background: none;
+  }
+  header.hero img{
+    margin-top: 20%!important;
+    width 100px
+  }
+  .sidebar-nav-links a.nav-link{
+    padding: initial!important
+  }
+}
