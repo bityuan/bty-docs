@@ -7,7 +7,7 @@ module.exports = config({
   base: '/bty-docs/',
   dest: "./docs",
   head: [
-    ['link', {rel:'icon',href:'./public/favicon.ico'}]
+    ['link', {rel:'icon',href:'/favicon.ico'}]
   ],
   // head: [
   //   ["script", { src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" }],
