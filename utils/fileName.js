@@ -10,7 +10,7 @@ function getFilesName(str) {
   files.forEach((item,index) => {
     if (item.length != 0 && !item.includes('.md')) {
       files[index] = {
-        title: item,
+        title: item.slice(item.indexOf('.')+1),
         prefix: `${item}/`,
         children:getFilesName(`${str}/${item}`)
       }
