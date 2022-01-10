@@ -20,15 +20,15 @@
 初次使用比特元钱包需要创建一个钱包。   
 在创建钱包界面，如图1。获得15个助记词并将其备份后（如手抄写于纸质材料或拷贝至离线电脑，注意助记词**切勿**保存于在线网络），单击“下一步”确认助记词，如图2。     
 图1  
-![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/zh/1.png?raw=true)  
+![avatar](/picture/zh/1.png)  
 图2  
-![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/zh/2.png?raw=true)  
+![avatar](/picture/zh/2.png)  
 用户需要**按顺序点击**之前获得的助记词，核对无误后，设置钱包密码，单击“创建钱包”完成钱包的创建。 
 
 ### 3.2 导入钱包
 已经拥有比特元钱包助记词的用户，可以选择导入钱包来恢复之前创建的钱包。同样地，在导入钱包界面**按序输入**已备份的15个助记词，如图3，输入密码后即可恢复之前的比特元钱包。  
 图3  
-![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/zh/3.png?raw=true) 
+![avatar](/picture/zh/3.png) 
 
 ## 4．节点部署
 完成钱包配置后，即可进行比特元钱包节点部署。   
