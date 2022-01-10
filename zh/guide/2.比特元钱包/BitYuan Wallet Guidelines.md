@@ -35,12 +35,12 @@
 比特元节点需要运行在网络中，请保持网络通畅。首次完成钱包创建后需要等待区块同步，如图4。同步进度会在客户端底部显示。同步完成即成功部署比特元节点。  
 <font color=Red>注意：</font>同步完成后比特元钱包仍需保持在线状态。   
 图4   
-![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/zh/4.png?raw=true) 
+![avatar](../../../picture/4.png) 
 
 ### 4.1 节点状态
 比特元钱包主页右下角为当前比特元钱包节点的状态，鼠标悬停于具体图标时，可以查看对应的状态，如图5。   
 图5  
-![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/zh/5.png?raw=true) 
+![avatar](../../../picture/5.png) 
  
 1为钱包状态，显示当前钱包是否处于锁定状态。 若锁定，则需要输入密码进行解锁，解锁后状态变成绿色。  
 2为挖矿状态，显示当前钱包是否处于挖矿中。 开启自动购票之后会显示挖矿中。  
@@ -53,7 +53,7 @@
 比特元钱包支持比特元转账、地址簿管理等相关功能。   
 钱包同步完成后，可使用钱包进行比特元转账等操作，如图6。下文详细介绍各个模块的功能以及使用方法。   
 图6    
-![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/zh/6.png?raw=true) 
+![avatar](../../../picture/6.png) 
 
 ### 5.1 钱包设置
 钱包顶部设置栏，即图6中的**模块4**。   
@@ -92,7 +92,7 @@
 ### 5.5 地址簿
 地址簿页签显示该钱包目前拥有的地址以及好友地址，如图7。  
 图7  
-![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/zh/7.png?raw=true)   
+![avatar](../../../picture/7.png)   
 左侧显示钱包本身拥有的地址，在此区域可新建、导出、隐藏地址。右键地址可进行复制、编辑、隐藏等操作。单击目标地址右侧的“详情”，可显示该地址的**二维码**，可拷贝地址并保存图片操作。 
 钱包本身拥有的地址<font color=Red>无法删除</font>。  
 右侧显示的是好友地址，在转账时可直接从地址簿中选择好友地址，无需反复输入。在此区域可新建、导出、删除地址。同样支持显示地址**二维码**。  
@@ -128,7 +128,7 @@
 2. 解锁钱包仅用于挖矿：  
 单击“设置”页签中的解锁按钮，输入钱包密码并勾选“仅用于挖矿”，完成钱包挖矿解锁，如图8。  
 图8  
-![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/zh/8.png?raw=true) 
+![avatar](../../../picture/8.png) 
 3. 开启钱包自动挖矿：  
 单击比特元钱包“设置”页签，开启自动购票。开启自动购票后，10分钟内会完成购买ticket的操作，并在钱包的操作记录中显示。之后进入挖矿的正常生命周期。 
 
@@ -191,7 +191,7 @@ wallet status
 ticket close
 ```     
 图9  
-![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/zh/9.png?raw=true) 
+![avatar](../../../picture/9.png) 
 
 冻结的比特元会分以下几种情况释放：  
 - 零散的比特元和未挖到矿的成熟票（购票满48小时）会立即释放到自己的钱包地址中。  

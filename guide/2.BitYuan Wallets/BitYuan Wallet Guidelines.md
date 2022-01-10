@@ -63,7 +63,7 @@ The user can check nodes status in the lower right corner on BitYuan wallet home
 
 ![avatar](../../picture/e4.png) is syncing status, showing the process and status of wallet syncing. It shows the number of transaction blocks downloaded. 
 
-![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/en/x5.png?raw=true) is server status, showing whether current wallet can serve other nodes. 
+![avatar](../../picture/e5.png) is server status, showing whether current wallet can serve other nodes. 
 
 
 
