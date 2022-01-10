@@ -55,13 +55,13 @@ BitYuan nodes need run online, please keep your network smooth. After first BitY
 
 The user can check nodes status in the lower right corner on BitYuan wallet homepage when hovering over the icon.
 
-![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/en/x1.png?raw=true) is wallet status, showing whether current wallet is locked. If locked, enter password to unlock and the status turns into green.
+![avatar](../../picture/e1.png) is wallet status, showing whether current wallet is locked. If locked, enter password to unlock and the status turns into green.
 
-![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/en/x2.png?raw=true) is Mining status, showing whether current wallet is mining. It will show "mining" after ticket auto-purchase open.
+![avatar](../../picture/e2.png) is Mining status, showing whether current wallet is mining. It will show "mining" after ticket auto-purchase open.
 
-![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/en/x3.png?raw=true) is network connection, showing whether network of current wallet is connected. It shows the number of connected endpoints on this nodes in BitYuan network.
+![avatar](../../picture/e3.png) is network connection, showing whether network of current wallet is connected. It shows the number of connected endpoints on this nodes in BitYuan network.
 
-![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/en/x4.png?raw=true) is syncing status, showing the process and status of wallet syncing. It shows the number of transaction blocks downloaded. 
+![avatar](../../picture/e4.png) is syncing status, showing the process and status of wallet syncing. It shows the number of transaction blocks downloaded. 
 
 ![avatar](https://github.com/bityuan/bty-docs/blob/main/.vuepress/public/picture/en/x5.png?raw=true) is server status, showing whether current wallet can serve other nodes. 
 
