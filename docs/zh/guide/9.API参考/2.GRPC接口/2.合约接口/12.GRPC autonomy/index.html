@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>autonomy 接口 | BitYuan</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="A demo for vuepress-theme-hope">
+    <meta property="og:url" content="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy.html">
+    <meta property="og:site_name" content="BitYuan">
+    <meta property="og:title" content="autonomy 接口">
+    <meta property="og:description" content="autonomy 接口 自治系统参数默认值以及范围 可修改参数 不可修改参数 提案董事会成员 提案董事会成员 PropBoard 调用接口 参数： 参数说明： 参数类型是否必须说明| ----------------| execerbytes是执行器名称, 这里固定为autonomy| actionNamestring是操作名称, 这里固定为PropBoar">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh-CN">
+    <meta property="og:locale:alternate" content="en-US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="BitYuan">
+    
+    <link rel="preload" href="/assets/css/0.styles.b9744494.css" as="style"><link rel="preload" href="/assets/js/app.f2b147b3.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Layout.e3a25bcf.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.5d6867c9.js" as="script"><link rel="preload" href="/assets/js/page-autonomy接口.d9921f69.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound~layout-Slide.836cac6a.js" as="script"><link rel="prefetch" href="/assets/js/84.b4642496.js"><link rel="prefetch" href="/assets/js/85.94fd6858.js"><link rel="prefetch" href="/assets/js/86.05141861.js"><link rel="prefetch" href="/assets/js/87.494461b9.js"><link rel="prefetch" href="/assets/js/88.0fc77b20.js"><link rel="prefetch" href="/assets/js/layout-Blog.f4420d83.js"><link rel="prefetch" href="/assets/js/layout-Layout.6f4f8ad5.js"><link rel="prefetch" href="/assets/js/layout-NotFound.5f1e53ec.js"><link rel="prefetch" href="/assets/js/layout-Slide.cd5c5786.js"><link rel="prefetch" href="/assets/js/page--571b5536.37cf0f8d.js"><link rel="prefetch" href="/assets/js/page-BitYuanIntroduction.da7ea8f3.js"><link rel="prefetch" href="/assets/js/page-BitYuanWalletGuidelines.742b6dbc.js"><link rel="prefetch" href="/assets/js/page-Blockchain模块.a60194c5.js"><link rel="prefetch" href="/assets/js/page-Buildparachain.3210e3c0.js"><link rel="prefetch" href="/assets/js/page-CA工具使用说明.884bef95.js"><link rel="prefetch" href="/assets/js/page-CA服务使用说明.52dd1527.js"><link rel="prefetch" href="/assets/js/page-Chain33RPC接口编程样例.6ae327eb.js"><link rel="prefetch" href="/assets/js/page-Chain33平行链环境配置.d868e45f.js"><link rel="prefetch" href="/assets/js/page-Chain33系统接口.7ccf8cf3.js"><link rel="prefetch" href="/assets/js/page-CreateBitYuanparentBlockchain.908597fb.js"><link rel="prefetch" href="/assets/js/page-Deployblockchainbrowser.5d9bf6ba.js"><link rel="prefetch" href="/assets/js/page-Deploysmartcontract.60da75c9.js"><link rel="prefetch" href="/assets/js/page-Deploywallet.a22ec922.js"><link rel="prefetch" href="/assets/js/page-Dockingwithexternalapplication.35b2ead4.js"><link rel="prefetch" href="/assets/js/page-EVM接口.3fc9df3d.js"><link rel="prefetch" href="/assets/js/page-GRPC接口约定.1d86b433.js"><link rel="prefetch" href="/assets/js/page-Manage.27ef9c08.js"><link rel="prefetch" href="/assets/js/page-Mempool接口.ce4e2f73.js"><link rel="prefetch" href="/assets/js/page-Mempool模块.956fa4e4.js"><link rel="prefetch" href="/assets/js/page-P2P模块.06a96d77.js"><link rel="prefetch" href="/assets/js/page-ParachainTokenIssuance.4f07fb9a.js"><link rel="prefetch" href="/assets/js/page-Project.bddcceb5.js"><link rel="prefetch" href="/assets/js/page-Queue模块.a46c53b6.js"><link rel="prefetch" href="/assets/js/page-RPC模块.988db370.js"><link rel="prefetch" href="/assets/js/page-Token接口.79006c7a.js"><link rel="prefetch" href="/assets/js/page-Trade接口.41023fa3.js"><link rel="prefetch" href="/assets/js/page-Unfreeze.c9ba07b4.js"><link rel="prefetch" href="/assets/js/page-Wallet接口.152623bb.js"><link rel="prefetch" href="/assets/js/page-事件接口.e6ce06a9.js"><link rel="prefetch" href="/assets/js/page-交易接口.0e09c4a4.js"><link rel="prefetch" href="/assets/js/page-共识模块.f9519c71.js"><link rel="prefetch" href="/assets/js/page-创建比特元主链节点.98d2c9dd.js"><link rel="prefetch" href="/assets/js/page-区块链接口.1ede2f73.js"><link rel="prefetch" href="/assets/js/page-去中心化应用.b2768e16.js"><link rel="prefetch" href="/assets/js/page-发展趋势.0bc773f9.js"><link rel="prefetch" href="/assets/js/page-命令行工具介绍.09cc8ce6.js"><link rel="prefetch" href="/assets/js/page-国密支持.b892d07e.js"><link rel="prefetch" href="/assets/js/page-多重签名.6267612f.js"><link rel="prefetch" href="/assets/js/page-存储模块.5c1e1715.js"><link rel="prefetch" href="/assets/js/page-对接外部应用.62f73b6b.js"><link rel="prefetch" href="/assets/js/page-平行链共识节点挖矿奖励规则.37f55330.js"><link rel="prefetch" href="/assets/js/page-平行链发行Token.5845fe1e.js"><link rel="prefetch" href="/assets/js/page-平行链资产转移管理介绍.93078d90.js"><link rel="prefetch" href="/assets/js/page-平行链超级节点创建和超级账户管理介绍.17669bce.js"><link rel="prefetch" href="/assets/js/page-执行器接口.063990a5.js"><link rel="prefetch" href="/assets/js/page-执行器模块.56f3ee7b.js"><link rel="prefetch" href="/assets/js/page-技术架构.b079ab30.js"><link rel="prefetch" href="/assets/js/page-挖矿接口.65bd6200.js"><link rel="prefetch" href="/assets/js/page-接口约定.861290ea.js"><link rel="prefetch" href="/assets/js/page-搭建平行链.4fea970d.js"><link rel="prefetch" href="/assets/js/page-文档主页.4c9ddb39.js"><link rel="prefetch" href="/assets/js/page-智能合约.60b21285.js"><link rel="prefetch" href="/assets/js/page-术语介绍.e7e8eaea.js"><link rel="prefetch" href="/assets/js/page-查询余额.5c805e96.js"><link rel="prefetch" href="/assets/js/page-比特元主网环境配置.beef747b.js"><link rel="prefetch" href="/assets/js/page-比特元介绍.ee0d0d50.js"><link rel="prefetch" href="/assets/js/page-比特元的SPOS共识.ad029c1e.js"><link rel="prefetch" href="/assets/js/page-比特元钱包操作手册.eaa85c15.js"><link rel="prefetch" href="/assets/js/page-系统模块.d622e6fa.js"><link rel="prefetch" href="/assets/js/page-网络类型.5c32c196.js"><link rel="prefetch" href="/assets/js/page-账户模型.109b3f0f.js"><link rel="prefetch" href="/assets/js/page-部署区块链浏览器.f3b23359.js"><link rel="prefetch" href="/assets/js/page-部署智能合约.03d62bee.js"><link rel="prefetch" href="/assets/js/page-部署钱包.9529925f.js"><link rel="prefetch" href="/assets/js/page-配置文件说明.558a3bd9.js"><link rel="prefetch" href="/assets/js/page-钱包找回合约.be187460.js"><link rel="prefetch" href="/assets/js/page-钱包模块.f1230c6d.js"><link rel="prefetch" href="/assets/js/page-隐私保护.75638a9c.js"><link rel="prefetch" href="/assets/js/page-食品溯源案例.12b14ac5.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.828f4b6d.js"><link rel="prefetch" href="/assets/js/vendors~mermaid.2ed83d5d.js"><link rel="prefetch" href="/assets/js/vendors~photo-swipe.e67c69ba.js"><link rel="prefetch" href="/assets/js/vendors~reveal.4a701429.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b9744494.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container has-navbar has-sidebar has-anchor"><header class="navbar"><!----> <div class="content__navbar-start"></div> <button title="Sidebar Button" class="sidebar-button"><span class="icon"></span></button> <a href="/zh/" class="home-link router-link-active"><img src="/logo.svg" alt="BitYuan" class="logo"> <!----> <span class="site-name can-hide">BitYuan</span></a> <!----> <div class="content__navbar-center"></div> <div class="links"><button tabindex="-1" aria-hidden="true" class="color-button"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="skin-icon"><path d="M224 800c0 9.6 3.2 44.8 6.4 54.4 6.4 48-48 76.8-48 76.8s80 41.6 147.2 0 134.4-134.4
+        38.4-195.2c-22.4-12.8-41.6-19.2-57.6-19.2C259.2 716.8 227.2 761.6 224 800zM560 675.2l-32
+        51.2c-51.2 51.2-83.2 32-83.2 32 25.6 67.2 0 112-12.8 128 25.6 6.4 51.2 9.6 80 9.6 54.4 0
+        102.4-9.6 150.4-32l0 0c3.2 0 3.2-3.2 3.2-3.2 22.4-16 12.8-35.2
+        6.4-44.8-9.6-12.8-12.8-25.6-12.8-41.6 0-54.4 60.8-99.2 137.6-99.2 6.4 0 12.8 0 22.4
+        0 12.8 0 38.4 9.6 48-25.6 0-3.2 0-3.2 3.2-6.4 0-3.2 3.2-6.4 3.2-6.4 6.4-16 6.4-16 6.4-19.2
+        9.6-35.2 16-73.6 16-115.2 0-105.6-41.6-198.4-108.8-268.8C704 396.8 560 675.2 560 675.2zM224
+        419.2c0-28.8 22.4-51.2 51.2-51.2 28.8 0 51.2 22.4 51.2 51.2 0 28.8-22.4 51.2-51.2 51.2C246.4
+        470.4 224 448 224 419.2zM320 284.8c0-22.4 19.2-41.6 41.6-41.6 22.4 0 41.6 19.2 41.6 41.6 0
+        22.4-19.2 41.6-41.6 41.6C339.2 326.4 320 307.2 320 284.8zM457.6 208c0-12.8 12.8-25.6 25.6-25.6
+        12.8 0 25.6 12.8 25.6 25.6 0 12.8-12.8 25.6-25.6 25.6C470.4 233.6 457.6 220.8 457.6 208zM128
+        505.6C128 592 153.6 672 201.6 736c28.8-60.8 112-60.8 124.8-60.8-16-51.2 16-99.2
+        16-99.2l316.8-422.4c-48-19.2-99.2-32-150.4-32C297.6 118.4 128 291.2 128 505.6zM764.8
+        86.4c-22.4 19.2-390.4 518.4-390.4 518.4-22.4 28.8-12.8 76.8 22.4 99.2l9.6 6.4c35.2 22.4
+        80 12.8 99.2-25.6 0 0 6.4-12.8 9.6-19.2 54.4-105.6 275.2-524.8 288-553.6
+        6.4-19.2-3.2-32-19.2-32C777.6 76.8 771.2 80 764.8 86.4z"></path></svg> <div class="color-picker-menu" style="display:none;"><div class="theme-options"><!----> <div class="darkmode-toggle"><label for="darkmode-toggle" class="desc">主题模式:</label> <div class="darkmode-switch"><div class="switch"><input id="switch" type="checkbox" checked="checked" class="switch-input"> <label for="switch" class="label"><span class="label-content"></span></label></div></div> <!----></div></div></div></button> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/zh/" class="nav-link router-link-active"><!---->
+  主页
+</a></div><div class="nav-item"><a href="/zh/guide/" class="nav-link router-link-active active"><!---->
+  指南
+</a></div></nav> <div class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon i18n-icon" style="width:1rem;height:1rem;vertical-align:middle;margin-left:1rem;"><path d="M639.981 344.075c14.805 44.45 34.542 79.023 69.084 113.596 29.603-29.634 49.34-69.146 64.145-113.596H639.981zM314.33 591.024h128.29l-64.145-172.865-64.145 172.865z" fill="currentColor"></path> <path d="M807.746 116.882H215.643c-54.274 0-98.681 44.45-98.681 98.78v592.677c0 54.329 44.407 98.78 98.68 98.78h592.104c54.273 0 98.681-44.451 98.681-98.78V215.66c0-54.329-39.475-98.78-98.68-98.78zM565.971 754.01c-9.866 9.878-19.738 9.878-29.603 9.878-4.94 0-14.805 0-19.738-4.939-4.939-4.939-9.872 0-9.872-4.939s-4.932-9.878-9.865-19.756c-4.94-9.878-4.94-14.817-9.872-24.695L467.29 655.23H294.592l-19.737 54.33c-9.866 19.755-14.805 34.572-19.738 44.45-4.939 9.878-14.804 9.878-29.603 9.878-9.871 0-19.737-4.939-29.609-9.878-9.865-9.878-14.798-14.817-14.798-24.695 0-4.939 0-9.878 4.933-19.756 4.939-9.878 4.939-14.817 9.865-24.695l108.553-276.583c4.939-9.878 4.939-19.756 9.872-29.633 4.932-9.878 9.865-19.756 14.798-24.695 4.939-4.94 9.872-14.817 19.737-19.756 9.872-4.94 19.738-4.94 29.61-4.94 9.865 0 19.73 0 29.603 4.94 9.865 4.939 14.804 9.878 19.737 19.756 4.933 4.939 9.866 14.817 14.798 24.695 4.94 9.877 9.872 19.755 14.805 34.572l108.553 271.644c9.865 19.756 14.804 34.573 14.804 44.451-4.939 4.94-9.872 14.817-14.804 24.695zm271.378-192.62c-54.273-19.756-93.748-44.451-128.29-74.085-34.536 34.573-78.943 59.268-133.223 74.085l-14.798-24.695c54.273-14.817 98.68-34.573 133.223-69.146-34.542-34.573-64.145-79.024-74.017-128.413h-49.34V319.38h133.228c-9.877-14.817-19.743-34.573-29.609-49.39l14.799-4.94c9.871 14.818 24.676 34.574 34.542 54.33h123.35v24.695h-49.34c-14.798 49.39-39.468 93.84-69.077 123.474 34.541 29.634 74.01 54.329 128.29 69.146l-19.738 24.695z" fill="currentColor"></path></svg> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/" class="nav-link router-link-active"><!---->
+  English
+</a></li><li class="dropdown-item"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/" aria-current="page" class="nav-link router-link-exact-active router-link-active active"><!---->
+  简体中文
+</a></li></ul></div></div></div> <a rel="noopener noreferrer" href="https://github.com/bityuan/bty-docs" target="_blank" class="repo-link can-hide">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <!----> <div class="content__navbar-end"></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!----> <!----> <div class="content__sidebar-top"></div> <nav class="sidebar-nav-links"><div class="nav-item"><a href="/zh/" class="nav-link router-link-active"><!---->
+  主页
+</a></div><div class="nav-item"><a href="/zh/guide/" class="nav-link router-link-active active"><!---->
+  指南
+</a></div> <a rel="noopener noreferrer" href="https://github.com/bityuan/bty-docs" target="_blank" class="repo-link">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <!----> <div class="content__sidebar-center"></div> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><!----> <span class="title">指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/guide/" aria-current="page" class="sidebar-link">比特元介绍 #</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">简介</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">SDK参考</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">升级指南</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">入门</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">进阶</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">智能合约</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">去中心化应用</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">区块链浏览器</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">钱包</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">案例介绍</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable open"><!----> <span class="title">API参考</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading clickable"><!----> <span class="title">JSON-RPC接口</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading clickable open"><!----> <span class="title">GRPC接口</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-3"><p class="sidebar-heading clickable"><!----> <span class="title">系统接口</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-3"><p class="sidebar-heading clickable open"><!----> <span class="title">合约接口</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/1.GRPC%20Token/" class="sidebar-link">Token 接口</a></li><li><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/10.GRPC%20Paracross/" class="sidebar-link">平行链资产转移管理介绍</a></li><li><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/11.GRPC%20ParaMiner/" class="sidebar-link">平行链共识节点挖矿奖励规则</a></li><li><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/" aria-current="page" class="active sidebar-link">autonomy 接口</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#自治系统参数默认值以及范围" class="sidebar-link">自治系统参数默认值以及范围</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#可修改参数" class="sidebar-link heading3">可修改参数</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#不可修改参数" class="sidebar-link heading3">不可修改参数</a></li></ul></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案董事会成员" class="sidebar-link">提案董事会成员</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案董事会成员-propboard" class="sidebar-link heading3">提案董事会成员 PropBoard</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#撤销提案董事会成员-rvkpropboard" class="sidebar-link heading3">撤销提案董事会成员 RvkPropBoard</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#投票提案董事会成员-votepropboard" class="sidebar-link heading3">投票提案董事会成员 VotePropBoard</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#终止董事会成员提案-tmintpropboard" class="sidebar-link heading3">终止董事会成员提案 TmintPropBoard</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#查询提案" class="sidebar-link heading3">查询提案</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#查询有效的董事会成员-getactiveboard" class="sidebar-link heading3">查询有效的董事会成员 GetActiveBoard</a></li></ul></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案项目" class="sidebar-link">提案项目</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案项目-propproject" class="sidebar-link heading3">提案项目 PropProject</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#撤销提案项目-rvkpropproject" class="sidebar-link heading3">撤销提案项目 RvkPropProject</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#投票提案项目-votepropproject" class="sidebar-link heading3">投票提案项目 VotePropProject</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#投票反对提案项目-pubvotepropproject" class="sidebar-link heading3">投票反对提案项目 PubVotePropProject</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#终止提案项目-tmintpropproject" class="sidebar-link heading3">终止提案项目 TmintPropProject</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#查询提案-2" class="sidebar-link heading3">查询提案</a></li></ul></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案系统参数修改" class="sidebar-link">提案系统参数修改</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案系统参数修改-proprule" class="sidebar-link heading3">提案系统参数修改 PropRule</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#撤销提案系统参数修改-rvkproprule" class="sidebar-link heading3">撤销提案系统参数修改 RvkPropRule</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#投票提案系统参数修改-voteproprule" class="sidebar-link heading3">投票提案系统参数修改 VotePropRule</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#终止提案系统参数修改-tmintproprule" class="sidebar-link heading3">终止提案系统参数修改 TmintPropRule</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#查询提案-3" class="sidebar-link heading3">查询提案</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#查询有效系统参数-getactiverule" class="sidebar-link heading3">查询有效系统参数 GetActiveRule</a></li></ul></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案董事会成员修改" class="sidebar-link">提案董事会成员修改</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案董事会成员修改-propchange" class="sidebar-link heading3">提案董事会成员修改 PropChange</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#撤销提案董事会成员修改-rvkpropchange" class="sidebar-link heading3">撤销提案董事会成员修改 RvkPropChange</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#投票提案董事会成员修改-votepropchange" class="sidebar-link heading3">投票提案董事会成员修改 VotePropChange</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#终止提案董事会成员修改-tmintpropchange" class="sidebar-link heading3">终止提案董事会成员修改 TmintPropChange</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#查询提案-4" class="sidebar-link heading3">查询提案</a></li></ul></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#评论提案" class="sidebar-link">评论提案</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#评论提案-commentprop" class="sidebar-link heading3">评论提案 CommentProp</a></li><li class="sidebar-sub-header"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#通过提案-id-查询所对应评论-listproposalcomment" class="sidebar-link heading3">通过提案 ID 查询所对应评论 ListProposalComment</a></li></ul></li></ul></li><li><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/2.GRPC%20Trade/" class="sidebar-link">Trade 接口</a></li><li><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/3.GRPC%20Manage/" class="sidebar-link">Manage</a></li><li><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/4.GRPC%20EVM/" class="sidebar-link">EVM 接口</a></li><li><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/5.GRPC%20Unfreeze/" class="sidebar-link">Unfreeze</a></li><li><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/6.GRPC%20MultiSig/" class="sidebar-link">多重签名</a></li><li><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/7.GRPC%20Oracle/" class="sidebar-link">事件接口</a></li><li><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/8.GRPC%20Nodegroup/" class="sidebar-link">平行链超级节点创建和超级账户管理介绍</a></li><li><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/9.GRPC%20Retrieve/" class="sidebar-link">钱包找回合约</a></li></ul></section></li></ul></section></li></ul></section></li></ul></section></li></ul> <!----> <div class="content__sidebar-bottom"></div> <!----></aside> <main class="page"><nav class="breadcrumb disable"><!----></nav> <!----> <div class="content__page-top"></div> <div vocab="https://schema.org/" typeof="Article" class="page-title"><h1><!----> <span property="headline">autonomy 接口</span></h1> <div class="page-info"><!----> <!----><!----></div> <!----> <hr></div> <div class="anchor-place-holder"><aside id="anchor"><div class="anchor-wrapper"><ul class="anchor-list"><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#自治系统参数默认值以及范围" class="anchor-link heading2"><div>自治系统参数默认值以及范围</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#可修改参数" class="anchor-link heading3"><div>可修改参数</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#不可修改参数" class="anchor-link heading3"><div>不可修改参数</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案董事会成员" class="anchor-link heading2"><div>提案董事会成员</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案董事会成员-propboard" class="anchor-link heading3"><div>提案董事会成员 PropBoard</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#撤销提案董事会成员-rvkpropboard" class="anchor-link heading3"><div>撤销提案董事会成员 RvkPropBoard</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#投票提案董事会成员-votepropboard" class="anchor-link heading3"><div>投票提案董事会成员 VotePropBoard</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#终止董事会成员提案-tmintpropboard" class="anchor-link heading3"><div>终止董事会成员提案 TmintPropBoard</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#查询提案" class="anchor-link heading3"><div>查询提案</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#查询有效的董事会成员-getactiveboard" class="anchor-link heading3"><div>查询有效的董事会成员 GetActiveBoard</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案项目" class="anchor-link heading2"><div>提案项目</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案项目-propproject" class="anchor-link heading3"><div>提案项目 PropProject</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#撤销提案项目-rvkpropproject" class="anchor-link heading3"><div>撤销提案项目 RvkPropProject</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#投票提案项目-votepropproject" class="anchor-link heading3"><div>投票提案项目 VotePropProject</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#投票反对提案项目-pubvotepropproject" class="anchor-link heading3"><div>投票反对提案项目 PubVotePropProject</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#终止提案项目-tmintpropproject" class="anchor-link heading3"><div>终止提案项目 TmintPropProject</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#查询提案-2" class="anchor-link heading3"><div>查询提案</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案系统参数修改" class="anchor-link heading2"><div>提案系统参数修改</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案系统参数修改-proprule" class="anchor-link heading3"><div>提案系统参数修改 PropRule</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#撤销提案系统参数修改-rvkproprule" class="anchor-link heading3"><div>撤销提案系统参数修改 RvkPropRule</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#投票提案系统参数修改-voteproprule" class="anchor-link heading3"><div>投票提案系统参数修改 VotePropRule</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#终止提案系统参数修改-tmintproprule" class="anchor-link heading3"><div>终止提案系统参数修改 TmintPropRule</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#查询提案-3" class="anchor-link heading3"><div>查询提案</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#查询有效系统参数-getactiverule" class="anchor-link heading3"><div>查询有效系统参数 GetActiveRule</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案董事会成员修改" class="anchor-link heading2"><div>提案董事会成员修改</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#提案董事会成员修改-propchange" class="anchor-link heading3"><div>提案董事会成员修改 PropChange</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#撤销提案董事会成员修改-rvkpropchange" class="anchor-link heading3"><div>撤销提案董事会成员修改 RvkPropChange</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#投票提案董事会成员修改-votepropchange" class="anchor-link heading3"><div>投票提案董事会成员修改 VotePropChange</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#终止提案董事会成员修改-tmintpropchange" class="anchor-link heading3"><div>终止提案董事会成员修改 TmintPropChange</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#查询提案-4" class="anchor-link heading3"><div>查询提案</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#评论提案" class="anchor-link heading2"><div>评论提案</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#评论提案-commentprop" class="anchor-link heading3"><div>评论提案 CommentProp</div></a></li><li class="anchor"><a href="/zh/guide/9.API%E5%8F%82%E8%80%83/2.GRPC%E6%8E%A5%E5%8F%A3/2.%E5%90%88%E7%BA%A6%E6%8E%A5%E5%8F%A3/12.GRPC%20autonomy/#通过提案-id-查询所对应评论-listproposalcomment" class="anchor-link heading3"><div>通过提案 ID 查询所对应评论 ListProposalComment</div></a></li></ul></div></aside></div> <!----> <div class="content__content-top"></div> <div class="theme-default-content content__default"><h1 id="autonomy-接口"><a href="#autonomy-接口" class="header-anchor">#</a> autonomy 接口</h1> <h2 id="自治系统参数默认值以及范围"><a href="#自治系统参数默认值以及范围" class="header-anchor">#</a> 自治系统参数默认值以及范围</h2> <h3 id="可修改参数"><a href="#可修改参数" class="header-anchor">#</a> 可修改参数</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>    // 默认公示周期,以区块高度计算,换算成时间大概一周
+    publicPeriod         int32 = 17280 * 7  
+    // 最小公示周期
+	minPublicPeriod      int32 = 17280 * 7
+	// 最大公示周期
+	maxPublicPeriod      int32 = 17280 * 14
+    // 默认重大项目公示金阈值
+	largeProjectAmount         = types.Coin * 100 * 10000 
+	// 最小重大项公示金目阈值
+	minLargeProjectAmount      = types.Coin * 100 * 10000
+	// 最大重大项公示金目阈值
+	maxLargeProjectAmount      = types.Coin * 300 * 10000
+	// 默认提案金
+	proposalAmount             = types.Coin * 500         
+	// 最小提案金
+	minProposalAmount          = types.Coin * 20
+	// 最大提案金
+	maxProposalAmount          = types.Coin * 2000
+	// 默认董事会成员赞成率，以%计
+	boardApproveRatio   int32 = 51                       
+	// 最小董事会赞成率
+	minBoardApproveRatio      = 50
+	// 最大董事会赞成率
+	maxBoardApproveRatio      = 66
+	// 默认全体持票人否决率，以%计
+	pubOpposeRatio      int32 = 33                     
+	// 最小全体持票人否决率
+	minPubOpposeRatio   int32 = 33
+	// 最大全体持票人否决率
+	maxPubOpposeRatio   int32 = 50
+	// 可以调整，但是可能需要进行范围的限制：参与率最低设置为 50%， 最高设置为 80%，赞成率，最低 50.1%，最高80%.
+	// 不能设置太低和太高，太低就容易作弊，太高则有可能很难达到
+	// 最小全体持票人参与率
+	minPubAttendRatio = 50
+	// 最大全体持票人参与率
+	maxPubAttendRatio = 80
+	// 最小全体持票人赞成率
+	minPubApproveRatio = 50
+	// 最大全体持票人赞成率
+	maxPubApproveRatio = 80
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><h3 id="不可修改参数"><a href="#不可修改参数" class="header-anchor">#</a> 不可修改参数</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>    // 董事会成员数范围
+    minBoards                 = 20
+	maxBoards                 = 40                  
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="提案董事会成员"><a href="#提案董事会成员" class="header-anchor">#</a> 提案董事会成员</h2> <h3 id="提案董事会成员-propboard"><a href="#提案董事会成员-propboard" class="header-anchor">#</a> 提案董事会成员 PropBoard</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message ProposalBoard {
+    int32 year               = 1;
+    int32 month              = 2;
+    int32 day                = 3;
+    bool update              = 4;
+    repeated string boards   = 5;
+    int64 startBlockHeight   = 6; // 提案开始投票高度
+    int64 endBlockHeight     = 7; // 提案结束投票高度
+    int64 realEndBlockHeight = 8; // 实际提案结束投票高度
+    BoardUpdate boardUpdate  = 9;
+}
+enum BoardUpdate {
+    INV = 0;
+    //新增
+    ADDBoard = 1;
+    //剔除
+    DELBoard = 2;
+    //整体替换
+    REPLACEALL = 3;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为PropBoard</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;ProposalBoard)</td></tr> <tr><td>year</td> <td>int32</td> <td>否</td> <td>提案年</td></tr> <tr><td>month</td> <td>int32</td> <td>否</td> <td>提案月</td></tr> <tr><td>day</td> <td>int32</td> <td>否</td> <td>提案日</td></tr> <tr><td>update</td> <td>bool</td> <td>否</td> <td>是否更新, 已弃用</td></tr> <tr><td>boards</td> <td>[]string</td> <td>是</td> <td>提案董事会成员</td></tr> <tr><td>startBlockHeight</td> <td>int64</td> <td>是</td> <td>开始投票高度</td></tr> <tr><td>endBlockHeight</td> <td>int64</td> <td>是</td> <td>结束投票高度, endBlockHeight &gt; startBlockHeight + 720 (自治系统中所有涉及提案都需要满足)</td></tr> <tr><td>realEndBlockHeight</td> <td>int64</td> <td>否</td> <td>实际投票结束高度, 不需要填写</td></tr> <tr><td>boardUpdate</td> <td>int32</td> <td>是</td> <td>1:新增, 2:删除, 3:整体更新</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="撤销提案董事会成员-rvkpropboard"><a href="#撤销提案董事会成员-rvkpropboard" class="header-anchor">#</a> 撤销提案董事会成员 RvkPropBoard</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+
+message RevokeProposalBoard {
+    string proposalID = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 RvkPropBoard</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;RevokeProposalBoard)</td></tr> <tr><td>proposalID</td> <td>string</td> <td>是</td> <td>提案ID, 即PropBoard的交易hash</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="投票提案董事会成员-votepropboard"><a href="#投票提案董事会成员-votepropboard" class="header-anchor">#</a> 投票提案董事会成员 VotePropBoard</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message VoteProposalBoard {
+    string   proposalID        = 1;
+    bool     approve           = 2;
+    //真正投票地址
+    repeated string originAddr = 3;
+    //代替approve，并增加了弃权选项
+    AutonomyVoteOption voteOption      = 4;
+}
+//三种投票选项
+enum AutonomyVoteOption {
+    NOJOIN = 0;
+    //支持
+    APPROVE = 1;
+    //反对
+    OPPOSE  = 2;
+    //弃权
+    QUIT    = 3;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 VotePropBoard</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;VoteProposalBoard)</td></tr> <tr><td>proposalID</td> <td>string</td> <td>是</td> <td>提案ID, 即PropBoard的交易hash</td></tr> <tr><td>voteOption</td> <td>int32</td> <td>是</td> <td>投票提案, 1:赞成, 2:反对, 3:弃权</td></tr> <tr><td>originAddr</td> <td>[]string</td> <td>否</td> <td>如果有绑定挖矿的可以将挖矿地址填入进行投票</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="终止董事会成员提案-tmintpropboard"><a href="#终止董事会成员提案-tmintpropboard" class="header-anchor">#</a> 终止董事会成员提案 TmintPropBoard</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+
+message TerminateProposalBoard {
+    string proposalID = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 TmintPropBoard</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;TerminateProposalBoard)</td></tr> <tr><td>proposalID</td> <td>string</td> <td>是</td> <td>提案ID, 即PropBoard的交易hash</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="查询提案"><a href="#查询提案" class="header-anchor">#</a> 查询提案</h3> <h4 id="通过proposalid查询提案-getproposalboard"><a href="#通过proposalid查询提案-getproposalboard" class="header-anchor">#</a> 通过proposalID查询提案 GetProposalBoard</h4> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc QueryChain(ChainExecutor) returns (Reply) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ChainExecutor {
+    string driver    = 1;
+    string funcName  = 2;
+    bytes  stateHash = 3;
+    bytes  param     = 4;
+    bytes  extra     = 5;
+}
+message ReqString {
+    string data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>driver</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>funcName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 GetProposalBoard</td></tr> <tr><td>stateHash</td> <td>bytes</td> <td>否</td> <td>所有交易在对应的执行器执行后写入KVDB中重新计算得到的新state的哈希值</td></tr> <tr><td>param</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;ReqString)</td></tr> <tr><td>extra</td> <td>bytes</td> <td>否</td> <td>扩展字段，用于额外的用途</td></tr> <tr><td>data</td> <td>string</td> <td>是</td> <td>提案ID, 即PropBoard的交易hash</td></tr></tbody></table> <h4 id="通过状态或者地址以及状态地址查询提案-listproposalboard"><a href="#通过状态或者地址以及状态地址查询提案-listproposalboard" class="header-anchor">#</a> 通过状态或者地址以及状态地址查询提案 ListProposalBoard</h4> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc QueryChain(ChainExecutor) returns (Reply) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ChainExecutor {
+    string driver    = 1;
+    string funcName  = 2;
+    bytes  stateHash = 3;
+    bytes  param     = 4;
+    //扩展字段，用于额外的用途
+    bytes extra = 5;
+}
+message ReqQueryProposalBoard {
+    int32  status    = 1;
+    string addr      = 2;
+    int32  count     = 3;
+    int32  direction = 4;
+    int64  height    = 5;
+    int32  index     = 6;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>driver</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>funcName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 ListProposalBoard</td></tr> <tr><td>status</td> <td>int32</td> <td>是</td> <td>提案状态, 1:提案申请状态, 2:提案撤销状态, 3:提案投票状态, 4:提案结束状态</td></tr> <tr><td>addr</td> <td>string</td> <td>否</td> <td>提案地址</td></tr> <tr><td>count</td> <td>int32</td> <td>是</td> <td>查询数量</td></tr> <tr><td>direction</td> <td>int32</td> <td>是</td> <td>查询方向, 0:降序, 1:升序</td></tr> <tr><td>height</td> <td>int64</td> <td>否</td> <td>查询量大翻页查询时候需要输入从某个高度开始</td></tr> <tr><td>index</td> <td>int32</td> <td>否</td> <td>查询量大翻页查询时候需要输入从某个index开始</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ReplyQueryProposalBoard {
+    repeated AutonomyProposalBoard propBoards = 1;
+}
+message AutonomyProposalBoard {
+    ProposalBoard propBoard = 1;
+    // 投票该提案的规则
+    RuleConfig curRule = 2;
+    // 投票董事会
+    ActiveBoard board = 3;
+    // 全体持票人投票结果
+    VoteResult voteResult = 4;
+    // 状态
+    int32  status     = 5;
+    string address    = 6;
+    int64  height     = 7;
+    int32  index      = 8;
+    string proposalID = 9;
+}
+message ActiveBoard {
+    repeated string boards      = 1;
+    repeated string revboards   = 2;
+    int64           amount      = 3;
+    int64           startHeight = 4;
+}
+message VoteResult {
+    // 总票数
+    int32 totalVotes = 1;
+    // 赞成票
+    int32 approveVotes = 2;
+    // 反对票
+    int32 opposeVotes = 3;
+    // 是否通过
+    bool pass = 4;
+    //弃权票
+    int32 quitVotes = 5;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>propBoard</td> <td>json</td> <td>参见(1)</td></tr> <tr><td>curRule.boardApproveRatio</td> <td>int32</td> <td>董事会赞成率</td></tr> <tr><td>curRule.pubAttendRatio</td> <td>int32</td> <td>全体持票人参与率</td></tr> <tr><td>curRule.pubApproveRatio</td> <td>int32</td> <td>全体持票人赞成率</td></tr> <tr><td>curRule.pubOpposeRatio</td> <td>int32</td> <td>全体持票人否决率</td></tr> <tr><td>curRule.proposalAmount</td> <td>int64</td> <td>提案金</td></tr> <tr><td>curRule.largeProjectAmount</td> <td>int64</td> <td>重大项目阈值</td></tr> <tr><td>curRule.publicPeriod</td> <td>int32</td> <td>公示期</td></tr> <tr><td>board.boards</td> <td>[]string</td> <td>有投票权的boards</td></tr> <tr><td>board.revboards</td> <td>[]string</td> <td>无投票权的boards</td></tr> <tr><td>board.amount</td> <td>int64</td> <td>该boards在当前周期已经审批的项目金</td></tr> <tr><td>board.startHeight</td> <td>int64</td> <td>当前周期的起始区块高度</td></tr> <tr><td>voteResult.totalVotes</td> <td>int32</td> <td>总票数</td></tr> <tr><td>voteResult.approveVotes</td> <td>int32</td> <td>赞成票</td></tr> <tr><td>voteResult.opposeVotes</td> <td>int32</td> <td>反对票</td></tr> <tr><td>voteResult.pass</td> <td>bool</td> <td>是否通过, true:通过, false:未通过</td></tr> <tr><td>status</td> <td>int32</td> <td>提案状态</td></tr> <tr><td>address</td> <td>string</td> <td>提案地址</td></tr> <tr><td>height</td> <td>int64</td> <td>提案高度</td></tr> <tr><td>index</td> <td>int32</td> <td>提案index</td></tr> <tr><td>proposalID</td> <td>string</td> <td>提案ID</td></tr></tbody></table> <h3 id="查询有效的董事会成员-getactiveboard"><a href="#查询有效的董事会成员-getactiveboard" class="header-anchor">#</a> 查询有效的董事会成员 GetActiveBoard</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc QueryChain(ChainExecutor) returns (Reply) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ChainExecutor {
+    string driver    = 1;
+    string funcName  = 2;
+    bytes  stateHash = 3;
+    bytes  param     = 4;
+    //扩展字段，用于额外的用途
+    bytes extra = 5;
+}
+message ReqString {
+    string data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>driver</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>funcName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 GetActiveBoard</td></tr> <tr><td>data</td> <td>string</td> <td>是</td> <td>&quot;1&quot;</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ActiveBoard {
+    repeated string boards      = 1;
+    repeated string revboards   = 2;
+    int64           amount      = 3;
+    int64           startHeight = 4;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>boards</td> <td>[]string</td> <td>有投票权的boards</td></tr> <tr><td>revboards</td> <td>[]string</td> <td>无投票权的boards</td></tr> <tr><td>amount</td> <td>int64</td> <td>该boards在当前周期已经审批的项目金</td></tr> <tr><td>startHeight</td> <td>int64</td> <td>当前周期的起始区块高度</td></tr></tbody></table> <h2 id="提案项目"><a href="#提案项目" class="header-anchor">#</a> 提案项目</h2> <h3 id="提案项目-propproject"><a href="#提案项目-propproject" class="header-anchor">#</a> 提案项目 PropProject</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message ProposalProject {
+    // 提案时间
+    int32 year  = 1;
+    int32 month = 2;
+    int32 day   = 3;
+    // 项目相关
+    string firstStage   = 4;  // 第一阶段提案项目hash
+    string lastStage    = 5;  // 上一阶段提案项目hash
+    string production   = 6;  // 项目地址
+    string description  = 7;  // 项目阶段性简述
+    string contractor   = 8;  // 承包人
+    int64  amount       = 9;  // 项目经费
+    string amountDetail = 10; // 经费细则
+    // 支付相关
+    string toAddr = 11; // 收款地址
+    // 投票相关
+    int64 startBlockHeight    = 12; // 提案开始投票高度
+    int64 endBlockHeight      = 13; // 提案结束投票高度
+    int64 realEndBlockHeight  = 14; // 实际提案结束投票高度
+    int32 projectNeedBlockNum = 15; // 以提案结束投票高度为准，需要项目需要消耗的区块数目所对应的时间
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 PropProject</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;ProposalProject)</td></tr> <tr><td>year</td> <td>int32</td> <td>否</td> <td>提案年</td></tr> <tr><td>month</td> <td>int32</td> <td>否</td> <td>提案月</td></tr> <tr><td>day</td> <td>int32</td> <td>否</td> <td>提案日</td></tr> <tr><td>firstStage</td> <td>string</td> <td>否</td> <td>第一阶段提案项目hash</td></tr> <tr><td>lastStage</td> <td>string</td> <td>否</td> <td>上一阶段提案项目hash</td></tr> <tr><td>production</td> <td>string</td> <td>否</td> <td>项目地址</td></tr> <tr><td>description</td> <td>string</td> <td>否</td> <td>项目阶段性简述</td></tr> <tr><td>contractor</td> <td>string</td> <td>否</td> <td>承包人</td></tr> <tr><td>amount</td> <td>int64</td> <td>是</td> <td>项目经费</td></tr> <tr><td>amountDetail</td> <td>string</td> <td>否</td> <td>经费细则</td></tr> <tr><td>toAddr</td> <td>string</td> <td>是</td> <td>收款地址</td></tr> <tr><td>startBlockHeight</td> <td>int64</td> <td>是</td> <td>开始投票高度</td></tr> <tr><td>endBlockHeight</td> <td>int64</td> <td>是</td> <td>结束投票高度, endBlockHeight &gt; startBlockHeight + 720 (自治系统中所有涉及提案都需要满足)</td></tr> <tr><td>realEndBlockHeight</td> <td>int64</td> <td>否</td> <td>实际投票结束高度, 不需要填写</td></tr> <tr><td>projectNeedBlockNum</td> <td>int64</td> <td>否</td> <td>项目耗时预估（以区块计算）</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="撤销提案项目-rvkpropproject"><a href="#撤销提案项目-rvkpropproject" class="header-anchor">#</a> 撤销提案项目 RvkPropProject</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message RevokeProposalProject {
+    string proposalID = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 RvkPropProject</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;RevokeProposalProject)</td></tr> <tr><td>proposalID</td> <td>string</td> <td>是</td> <td>提案ID, 即PropProject的交易hash</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="投票提案项目-votepropproject"><a href="#投票提案项目-votepropproject" class="header-anchor">#</a> 投票提案项目 VotePropProject</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message VoteProposalProject {
+    string proposalID = 1;
+    bool   approve    = 2;
+    AutonomyVoteOption vote   = 3;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 VotePropProject</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;VoteProposalProject)</td></tr> <tr><td>proposalID</td> <td>string</td> <td>是</td> <td>提案ID, 即PropProject的交易hash</td></tr> <tr><td>vote</td> <td>int32</td> <td>是</td> <td>投票提案, 1:赞成, 2:反对, 3:弃权</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="投票反对提案项目-pubvotepropproject"><a href="#投票反对提案项目-pubvotepropproject" class="header-anchor">#</a> 投票反对提案项目 PubVotePropProject</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message PubVoteProposalProject {
+    string   proposalID        = 1;
+    bool     oppose            = 2;
+    repeated string originAddr = 3;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 PubVotePropProject</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;PubVoteProposalProject)</td></tr> <tr><td>proposalID</td> <td>string</td> <td>是</td> <td>提案ID, 即PropProject的交易hash</td></tr> <tr><td>oppose</td> <td>bool</td> <td>是</td> <td>是否反对该提案, true:反对, false:不反对</td></tr> <tr><td>originAddr</td> <td>[]string</td> <td>否</td> <td>如果有绑定挖矿的可以将挖矿地址填入进行投票</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="终止提案项目-tmintpropproject"><a href="#终止提案项目-tmintpropproject" class="header-anchor">#</a> 终止提案项目 TmintPropProject</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message TerminateProposalProject {
+    string proposalID = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 TmintPropProject</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;TerminateProposalProject)</td></tr> <tr><td>proposalID</td> <td>string</td> <td>是</td> <td>提案ID, 即PropProject的交易hash</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="查询提案-2"><a href="#查询提案-2" class="header-anchor">#</a> 查询提案</h3> <h4 id="通过proposalid查询提案-getproposalproject"><a href="#通过proposalid查询提案-getproposalproject" class="header-anchor">#</a> 通过proposalID查询提案 GetProposalProject</h4> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc QueryChain(ChainExecutor) returns (Reply) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ChainExecutor {
+    string driver    = 1;
+    string funcName  = 2;
+    bytes  stateHash = 3;
+    bytes  param     = 4;
+    //扩展字段，用于额外的用途
+    bytes extra = 5;
+}
+message ReqString {
+    string data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>driver</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>funcName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 GetProposalProject</td></tr> <tr><td>data</td> <td>string</td> <td>是</td> <td>提案ID, 即PropProject的交易hash</td></tr></tbody></table> <h4 id="通过状态或者地址以及状态地址查询提案-listproposalproject"><a href="#通过状态或者地址以及状态地址查询提案-listproposalproject" class="header-anchor">#</a> 通过状态或者地址以及状态地址查询提案 ListProposalProject</h4> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc QueryChain(ChainExecutor) returns (Reply) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ChainExecutor {
+    string driver    = 1;
+    string funcName  = 2;
+    bytes  stateHash = 3;
+    bytes  param     = 4;
+    //扩展字段，用于额外的用途
+    bytes extra = 5;
+}
+message ReqQueryProposalProject {
+    int32  status    = 1;
+    string addr      = 2;
+    int32  count     = 3;
+    int32  direction = 4;
+    int64  height    = 5;
+    int32  index     = 6;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>driver</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>funcName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 ListProposalProject</td></tr> <tr><td>status</td> <td>int32</td> <td>是</td> <td>提案状态, 1:提案申请状态, 2:提案撤销状态, 3:董事会投票状态, 4:全体持票人投票状态, 5:提案结束状态</td></tr> <tr><td>addr</td> <td>string</td> <td>否</td> <td>提案地址</td></tr> <tr><td>count</td> <td>int32</td> <td>是</td> <td>查询数量</td></tr> <tr><td>direction</td> <td>int32</td> <td>是</td> <td>查询方向, 0:降序, 1:升序</td></tr> <tr><td>height</td> <td>int64</td> <td>否</td> <td>查询量大翻页查询时候需要输入从某个高度开始</td></tr> <tr><td>index</td> <td>int32</td> <td>否</td> <td>查询量大翻页查询时候需要输入从某个index开始</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message AutonomyProposalProject {
+    ProposalProject propProject = 1;
+    // 投票该提案的规则
+    RuleConfig curRule = 2;
+    // 投票该提案的董事会成员
+    repeated string boards = 3;
+    // 董事会投票结果
+    VoteResult boardVoteRes = 4;
+    // 公示投票
+    PublicVote pubVote = 5;
+    // 状态
+    int32  status     = 6;
+    string address    = 7;
+    int64  height     = 8;
+    int32  index      = 9;
+    string proposalID = 10;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>propProject</td> <td>json</td> <td>参见(1)</td></tr> <tr><td>curRule.boardApproveRatio</td> <td>int32</td> <td>董事会赞成率</td></tr> <tr><td>curRule.pubAttendRatio</td> <td>int32</td> <td>全体持票人参与率</td></tr> <tr><td>curRule.pubApproveRatio</td> <td>int32</td> <td>全体持票人赞成率</td></tr> <tr><td>curRule.pubOpposeRatio</td> <td>int32</td> <td>全体持票人否决率</td></tr> <tr><td>curRule.proposalAmount</td> <td>int64</td> <td>提案金</td></tr> <tr><td>curRule.largeProjectAmount</td> <td>int64</td> <td>重大项目阈值</td></tr> <tr><td>curRule.publicPeriod</td> <td>int32</td> <td>公示期</td></tr> <tr><td>boards</td> <td>[]string</td> <td>投票该提案的董事会成员</td></tr> <tr><td>boardVoteRes.totalVotes</td> <td>int32</td> <td>总票数</td></tr> <tr><td>boardVoteRes.approveVotes</td> <td>int32</td> <td>赞成票</td></tr> <tr><td>boardVoteRes.opposeVotes</td> <td>int32</td> <td>反对票</td></tr> <tr><td>boardVoteRes.pass</td> <td>bool</td> <td>是否通过, true:通过, false:未通过</td></tr> <tr><td>pubVote.publicity</td> <td>int32</td> <td>全体持票数</td></tr> <tr><td>pubVote.totalVotes</td> <td>int32</td> <td>赞成票</td></tr> <tr><td>pubVote.opposeVotes</td> <td>int32</td> <td>反对票, 反对票率决定是否通过</td></tr> <tr><td>pubVote.pubPass</td> <td>bool</td> <td>最总是否通过, true:通过, false:未通过</td></tr> <tr><td>status</td> <td>int32</td> <td>提案状态</td></tr> <tr><td>address</td> <td>string</td> <td>提案地址</td></tr> <tr><td>height</td> <td>int64</td> <td>提案高度</td></tr> <tr><td>index</td> <td>int32</td> <td>提案index</td></tr> <tr><td>proposalID</td> <td>string</td> <td>提案ID</td></tr></tbody></table> <h2 id="提案系统参数修改"><a href="#提案系统参数修改" class="header-anchor">#</a> 提案系统参数修改</h2> <h3 id="提案系统参数修改-proprule"><a href="#提案系统参数修改-proprule" class="header-anchor">#</a> 提案系统参数修改 PropRule</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message ProposalRule {
+    // 提案时间
+    int32 year  = 1;
+    int32 month = 2;
+    int32 day   = 3;
+    // 规则可修改项,如果某项不修改则置为-1
+    RuleConfig ruleCfg = 4;
+    // 投票相关
+    int64 startBlockHeight   = 5; // 提案开始投票高度
+    int64 endBlockHeight     = 6; // 提案结束投票高度
+    int64 realEndBlockHeight = 7; // 实际提案结束投票高度
+}
+message RuleConfig {
+    // 董事会成员赞成率,以%为单位,只保留整数部分
+    int32 boardApproveRatio = 1;
+    // 全体持票人否决率
+    int32 pubOpposeRatio = 2;
+    // 提案金额
+    int64 proposalAmount = 3;
+    // 重大项目公示金额阈值
+    int64 largeProjectAmount = 4;
+    // 重大项目公示时间（以区块数为单位）
+    int32 publicPeriod = 5;
+    // 全体持票人参与率
+    int32 pubAttendRatio = 6;
+    // 全体持票人赞成率
+    int32 pubApproveRatio = 7;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 PropRule</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;RuleConfig)</td></tr> <tr><td>year</td> <td>int32</td> <td>否</td> <td>提案年</td></tr> <tr><td>month</td> <td>int32</td> <td>否</td> <td>提案月</td></tr> <tr><td>day</td> <td>int32</td> <td>否</td> <td>提案日</td></tr> <tr><td>ruleCfg.boardApproveRatio</td> <td>int32</td> <td>否</td> <td>董事会赞成率</td></tr> <tr><td>ruleCfg.pubAttendRatio</td> <td>int32</td> <td>否</td> <td>全体持票人参与率</td></tr> <tr><td>ruleCfg.pubApproveRatio</td> <td>int32</td> <td>否</td> <td>全体持票人赞成率</td></tr> <tr><td>ruleCfg.pubOpposeRatio</td> <td>int32</td> <td>否</td> <td>全体持票人否决率</td></tr> <tr><td>ruleCfg.proposalAmount</td> <td>int64</td> <td>否</td> <td>提案金</td></tr> <tr><td>ruleCfg.largeProjectAmount</td> <td>int64</td> <td>否</td> <td>重大项目阈值</td></tr> <tr><td>ruleCfg.publicPeriod</td> <td>int32</td> <td>否</td> <td>公示期</td></tr> <tr><td>startBlockHeight</td> <td>int64</td> <td>是</td> <td>开始投票高度</td></tr> <tr><td>endBlockHeight</td> <td>int64</td> <td>是</td> <td>结束投票高度, endBlockHeight &gt; startBlockHeight + 720 (自治系统中所有涉及提案都需要满足)</td></tr> <tr><td>realEndBlockHeight</td> <td>int64</td> <td>否</td> <td>实际投票高度, 不需要填写</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="撤销提案系统参数修改-rvkproprule"><a href="#撤销提案系统参数修改-rvkproprule" class="header-anchor">#</a> 撤销提案系统参数修改 RvkPropRule</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message RevokeProposalRule {
+    string proposalID = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 RvkPropRule</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;RevokeProposalRule)</td></tr> <tr><td>proposalID</td> <td>string</td> <td>是</td> <td>提案ID, 即PropRule的交易hash</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="投票提案系统参数修改-voteproprule"><a href="#投票提案系统参数修改-voteproprule" class="header-anchor">#</a> 投票提案系统参数修改 VotePropRule</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message VoteProposalRule {
+    string   proposalID        = 1;
+    bool     approve           = 2;
+    repeated string originAddr = 3;
+    AutonomyVoteOption vote            = 4;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 VotePropRule</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;VoteProposalRule)</td></tr> <tr><td>proposalID</td> <td>string</td> <td>是</td> <td>提案ID, 即PropRule的交易hash</td></tr> <tr><td>vote</td> <td>int32</td> <td>是</td> <td>投票提案, 1:赞成, 2:反对, 3:弃权</td></tr> <tr><td>originAddr</td> <td>[]string</td> <td>否</td> <td>如果有绑定挖矿的可以将挖矿地址填入进行投票</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="终止提案系统参数修改-tmintproprule"><a href="#终止提案系统参数修改-tmintproprule" class="header-anchor">#</a> 终止提案系统参数修改 TmintPropRule</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message TerminateProposalRule {
+    string proposalID = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 TmintPropRule</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;TerminateProposalRule)</td></tr> <tr><td>proposalID</td> <td>string</td> <td>是</td> <td>提案ID, 即PropRule的交易hash</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="查询提案-3"><a href="#查询提案-3" class="header-anchor">#</a> 查询提案</h3> <h4 id="通过proposalid查询提案-getproposalrule"><a href="#通过proposalid查询提案-getproposalrule" class="header-anchor">#</a> 通过proposalID查询提案 GetProposalRule</h4> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc QueryChain(ChainExecutor) returns (Reply) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ChainExecutor {
+    string driver    = 1;
+    string funcName  = 2;
+    bytes  stateHash = 3;
+    bytes  param     = 4;
+    //扩展字段，用于额外的用途
+    bytes extra = 5;
+}
+message ReqString {
+    string data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>driver</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>funcName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 GetProposalRule</td></tr> <tr><td>data</td> <td>string</td> <td>是</td> <td>提案ID, 即PropRule的交易hash</td></tr></tbody></table> <h4 id="通过状态或者地址以及状态地址查询提案-listproposalrule"><a href="#通过状态或者地址以及状态地址查询提案-listproposalrule" class="header-anchor">#</a> 通过状态或者地址以及状态地址查询提案 ListProposalRule</h4> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc QueryChain(ChainExecutor) returns (Reply) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ChainExecutor {
+    string driver    = 1;
+    string funcName  = 2;
+    bytes  stateHash = 3;
+    bytes  param     = 4;
+    //扩展字段，用于额外的用途
+    bytes extra = 5;
+}
+message ReqQueryProposalRule {
+    int32  status    = 1;
+    string addr      = 2;
+    int32  count     = 3;
+    int32  direction = 4;
+    int64  height    = 5;
+    int32  index     = 6;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>driver</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>funcName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 ListProposalRule</td></tr> <tr><td>status</td> <td>int32</td> <td>是</td> <td>提案状态, 1:提案申请状态, 2:提案撤销状态, 3:提案投票状态, 4:提案结束状态</td></tr> <tr><td>addr</td> <td>string</td> <td>否</td> <td>提案地址</td></tr> <tr><td>count</td> <td>int32</td> <td>是</td> <td>查询数量</td></tr> <tr><td>direction</td> <td>int32</td> <td>是</td> <td>查询方向, 0:降序, 1:升序</td></tr> <tr><td>height</td> <td>int64</td> <td>否</td> <td>查询量大翻页查询时候需要输入从某个高度开始</td></tr> <tr><td>index</td> <td>int32</td> <td>否</td> <td>查询量大翻页查询时候需要输入从某个index开始</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ReplyQueryProposalRule {
+    repeated AutonomyProposalRule propRules = 1;
+}
+message AutonomyProposalRule {
+    ProposalRule propRule = 1;
+    RuleConfig   curRule  = 2;
+    // 全体持票人投票结果
+    VoteResult voteResult = 3;
+    // 状态
+    int32  status     = 4;
+    string address    = 5;
+    int64  height     = 6;
+    int32  index      = 7;
+    string proposalID = 8;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>propRule</td> <td>json</td> <td>参见(1)</td></tr> <tr><td>curRule</td> <td>json</td> <td>参见(1)</td></tr> <tr><td>voteResult.totalVotes</td> <td>int32</td> <td>总票数</td></tr> <tr><td>voteResult.approveVotes</td> <td>int32</td> <td>赞成票</td></tr> <tr><td>voteResult.opposeVotes</td> <td>int32</td> <td>反对票</td></tr> <tr><td>voteResult.pass</td> <td>bool</td> <td>是否通过, true:通过, false:未通过</td></tr> <tr><td>status</td> <td>int32</td> <td>提案状态</td></tr> <tr><td>address</td> <td>string</td> <td>提案地址</td></tr> <tr><td>height</td> <td>int64</td> <td>提案高度</td></tr> <tr><td>index</td> <td>int32</td> <td>提案index</td></tr> <tr><td>proposalID</td> <td>string</td> <td>提案ID</td></tr></tbody></table> <h3 id="查询有效系统参数-getactiverule"><a href="#查询有效系统参数-getactiverule" class="header-anchor">#</a> 查询有效系统参数 GetActiveRule</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc QueryChain(ChainExecutor) returns (Reply) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ChainExecutor {
+    string driver    = 1;
+    string funcName  = 2;
+    bytes  stateHash = 3;
+    bytes  param     = 4;
+    //扩展字段，用于额外的用途
+    bytes extra = 5;
+}
+message ReqString {
+    string data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>driver</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>funcName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 GetActiveRule</td></tr> <tr><td>data</td> <td>string</td> <td>是</td> <td>&quot;1&quot;</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message RuleConfig {
+    // 董事会成员赞成率,以%为单位,只保留整数部分
+    int32 boardApproveRatio = 1;
+    // 全体持票人否决率
+    int32 pubOpposeRatio = 2;
+    // 提案金额
+    int64 proposalAmount = 3;
+    // 重大项目公示金额阈值
+    int64 largeProjectAmount = 4;
+    // 重大项目公示时间（以区块数为单位）
+    int32 publicPeriod = 5;   
+    // 全体持票人参与率
+    int32 pubAttendRatio = 6;
+    // 全体持票人赞成率
+    int32 pubApproveRatio = 7;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>boardApproveRatio</td> <td>int32</td> <td>董事会赞成率</td></tr> <tr><td>pubAttendRatio</td> <td>int32</td> <td>全体持票人参与率</td></tr> <tr><td>pubApproveRatio</td> <td>int32</td> <td>全体持票人赞成率</td></tr> <tr><td>pubOpposeRatio</td> <td>int32</td> <td>全体持票人否决率</td></tr> <tr><td>proposalAmount</td> <td>int64</td> <td>提案金</td></tr> <tr><td>largeProjectAmount</td> <td>int64</td> <td>重大项目阈值</td></tr> <tr><td>publicPeriod</td> <td>int32</td> <td>公示期</td></tr></tbody></table> <h2 id="提案董事会成员修改"><a href="#提案董事会成员修改" class="header-anchor">#</a> 提案董事会成员修改</h2> <h3 id="提案董事会成员修改-propchange"><a href="#提案董事会成员修改-propchange" class="header-anchor">#</a> 提案董事会成员修改 PropChange</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message ProposalChange {
+    // 提案时间
+    int32 year  = 1;
+    int32 month = 2;
+    int32 day   = 3;
+    // 修改董事会成员
+    repeated Change changes = 4;
+    // 投票相关
+    int64 startBlockHeight   = 5; // 提案开始投票高度
+    int64 endBlockHeight     = 6; // 提案结束投票高度
+    int64 realEndBlockHeight = 7; // 实际提案结束投票高度
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 PropChange</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;ProposalChange)</td></tr> <tr><td>year</td> <td>int32</td> <td>否</td> <td>提案年</td></tr> <tr><td>month</td> <td>int32</td> <td>否</td> <td>提案月</td></tr> <tr><td>day</td> <td>int32</td> <td>否</td> <td>提案日</td></tr> <tr><td>changes</td> <td>strings</td> <td>是</td> <td>一个成员只允许替换一个新的, 只能填一个</td></tr> <tr><td>changes.cancel</td> <td>bool</td> <td>是</td> <td>true, 只允许替换, 不允许恢复操作</td></tr> <tr><td>changes.addr</td> <td>string</td> <td>是</td> <td>撤销或者添加董事会的地址</td></tr> <tr><td>startBlockHeight</td> <td>int64</td> <td>是</td> <td>开始投票高度</td></tr> <tr><td>endBlockHeight</td> <td>int64</td> <td>是</td> <td>结束投票高度, endBlockHeight &gt; startBlockHeight + 720 (自治系统中所有涉及提案都需要满足)</td></tr> <tr><td>realEndBlockHeight</td> <td>int64</td> <td>否</td> <td>实际投票结束高度, 不需要填写</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="撤销提案董事会成员修改-rvkpropchange"><a href="#撤销提案董事会成员修改-rvkpropchange" class="header-anchor">#</a> 撤销提案董事会成员修改 RvkPropChange</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message RevokeProposalChange {
+    string proposalID = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 RvkPropChange</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;RevokeProposalChange)</td></tr> <tr><td>proposalID</td> <td>string</td> <td>是</td> <td>提案ID, 即PropChange的交易hash</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="投票提案董事会成员修改-votepropchange"><a href="#投票提案董事会成员修改-votepropchange" class="header-anchor">#</a> 投票提案董事会成员修改 VotePropChange</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message VoteProposalChange {
+    string proposalID = 1;
+    bool   approve    = 2;
+    AutonomyVoteOption vote   = 3;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 VotePropChange</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;VoteProposalChange)</td></tr> <tr><td>proposalID</td> <td>string</td> <td>是</td> <td>提案ID, 即PropChange的交易hash</td></tr> <tr><td>vote</td> <td>bool</td> <td>是</td> <td>投票提案, 1:赞成, 2:反对, 3:弃权</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="终止提案董事会成员修改-tmintpropchange"><a href="#终止提案董事会成员修改-tmintpropchange" class="header-anchor">#</a> 终止提案董事会成员修改 TmintPropChange</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message TerminateProposalChange {
+    string proposalID = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 TmintPropChange</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;TerminateProposalChange)</td></tr> <tr><td>proposalID</td> <td>string</td> <td>是</td> <td>提案ID, 即PropChange的交易hash</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="查询提案-4"><a href="#查询提案-4" class="header-anchor">#</a> 查询提案</h3> <h4 id="通过proposalid查询提案-getproposalchange"><a href="#通过proposalid查询提案-getproposalchange" class="header-anchor">#</a> 通过proposalID查询提案 GetProposalChange</h4> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc QueryChain(ChainExecutor) returns (Reply) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ChainExecutor {
+    string driver    = 1;
+    string funcName  = 2;
+    bytes  stateHash = 3;
+    bytes  param     = 4;
+    //扩展字段，用于额外的用途
+    bytes extra = 5;
+}
+message ReqString {
+    string data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>driver</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>funcName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 GetProposalChange</td></tr> <tr><td>data</td> <td>string</td> <td>是</td> <td>提案ID, 即PropChange的交易hash</td></tr></tbody></table> <h4 id="通过状态或者地址以及状态地址查询提案-listproposalchange"><a href="#通过状态或者地址以及状态地址查询提案-listproposalchange" class="header-anchor">#</a> 通过状态或者地址以及状态地址查询提案 ListProposalChange</h4> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc QueryChain(ChainExecutor) returns (Reply) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ChainExecutor {
+    string driver    = 1;
+    string funcName  = 2;
+    bytes  stateHash = 3;
+    bytes  param     = 4;
+    //扩展字段，用于额外的用途
+    bytes extra = 5;
+}
+message ReqQueryProposalChange {
+    int32  status    = 1;
+    string addr      = 2;
+    int32  count     = 3;
+    int32  direction = 4;
+    int64  height    = 5;
+    int32  index     = 6;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>driver</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>funcName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 ListProposalChange</td></tr> <tr><td>status</td> <td>int32</td> <td>是</td> <td>提案状态, 1:提案申请状态, 2:提案撤销状态, 3:提案投票状态, 4:提案结束状态</td></tr> <tr><td>addr</td> <td>string</td> <td>否</td> <td>提案地址</td></tr> <tr><td>count</td> <td>int32</td> <td>是</td> <td>查询数量</td></tr> <tr><td>direction</td> <td>int32</td> <td>是</td> <td>查询方向, 0降序, 1升序</td></tr> <tr><td>height</td> <td>int64</td> <td>否</td> <td>查询量大翻页查询时候需要输入从某个高度开始</td></tr> <tr><td>index</td> <td>int32</td> <td>否</td> <td>查询量大翻页查询时候需要输入从某个index开始</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ReplyQueryProposalChange {
+    repeated AutonomyProposalChange propChanges = 1;
+}
+message AutonomyProposalChange {
+    ProposalChange propChange = 1;
+    // 投票该提案的规则
+    RuleConfig curRule = 2;
+    // 投票董事会
+    ActiveBoard board = 3;
+    // 全体持票人投票结果
+    VoteResult voteResult = 4;
+    // 状态
+    int32  status     = 5;
+    string address    = 6;
+    int64  height     = 7;
+    int32  index      = 8;
+    string proposalID = 9;
+}
+message ProposalChange {
+    // 提案时间
+    int32 year  = 1;
+    int32 month = 2;
+    int32 day   = 3;
+    // 修改董事会成员
+    repeated Change changes = 4;
+    // 投票相关
+    int64 startBlockHeight   = 5; // 提案开始投票高度
+    int64 endBlockHeight     = 6; // 提案结束投票高度
+    int64 realEndBlockHeight = 7; // 实际提案结束投票高度
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>propChange</td> <td>json</td> <td>参见(1)</td></tr> <tr><td>curRule.changeApproveRatio</td> <td>int32</td> <td>董事会赞成率</td></tr> <tr><td>curRule.pubOpposeRatio</td> <td>int32</td> <td>全体持票人否决率</td></tr> <tr><td>curRule.proposalAmount</td> <td>int64</td> <td>提案金</td></tr> <tr><td>curRule.largeProjectAmount</td> <td>int64</td> <td>重大项目阈值</td></tr> <tr><td>curRule.publicPeriod</td> <td>int32</td> <td>公示期</td></tr> <tr><td>board.boards</td> <td>[]string</td> <td>有投票权的boards</td></tr> <tr><td>board.revboards</td> <td>[]string</td> <td>无投票权的boards</td></tr> <tr><td>board.amount</td> <td>int64</td> <td>该boards在当前周期已经审批的项目金</td></tr> <tr><td>board.startHeight</td> <td>int64</td> <td>当前周期的起始区块高度</td></tr> <tr><td>voteResult.totalVotes</td> <td>int32</td> <td>总票数</td></tr> <tr><td>voteResult.approveVotes</td> <td>int32</td> <td>赞成票</td></tr> <tr><td>voteResult.opposeVotes</td> <td>int32</td> <td>反对票</td></tr> <tr><td>voteResult.pass</td> <td>bool</td> <td>是否通过, true:通过, false:未通过</td></tr> <tr><td>status</td> <td>int32</td> <td>提案状态</td></tr> <tr><td>address</td> <td>string</td> <td>提案地址</td></tr> <tr><td>height</td> <td>int64</td> <td>提案高度</td></tr> <tr><td>index</td> <td>int32</td> <td>提案index</td></tr> <tr><td>proposalID</td> <td>string</td> <td>提案ID</td></tr></tbody></table> <h2 id="评论提案"><a href="#评论提案" class="header-anchor">#</a> 评论提案</h2> <h3 id="评论提案-commentprop"><a href="#评论提案-commentprop" class="header-anchor">#</a> 评论提案 CommentProp</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc CreateTransaction(CreateTxIn) returns (UnsignTx) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message CreateTxIn {
+    bytes  execer     = 1;
+    string actionName = 2;
+    bytes  payload    = 3;
+}
+message Comment {
+    string proposalID = 1;
+    string repHash    = 2;
+    string comment    = 3;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>execer</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>actionName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 CommentProp</td></tr> <tr><td>payload</td> <td>bytes</td> <td>是</td> <td>types.Encode(&amp;Comment)</td></tr> <tr><td>proposalID</td> <td>string</td> <td>是</td> <td>所要评论的提案</td></tr> <tr><td>repHash</td> <td>string</td> <td>否</td> <td>所要回复的评论</td></tr> <tr><td>comment</td> <td>string</td> <td>是</td> <td>评论</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message UnsignTx {
+    bytes data = 1;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>data</td> <td>bytes</td> <td>交易十六进制编码后的数据</td></tr></tbody></table> <h3 id="通过提案-id-查询所对应评论-listproposalcomment"><a href="#通过提案-id-查询所对应评论-listproposalcomment" class="header-anchor">#</a> 通过提案 ID 查询所对应评论 ListProposalComment</h3> <p><strong>调用接口</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>rpc QueryChain(ChainExecutor) returns (Reply) {}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p><strong>参数：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ChainExecutor {
+    string driver    = 1;
+    string funcName  = 2;
+    bytes  stateHash = 3;
+    bytes  param     = 4;
+    //扩展字段，用于额外的用途
+    bytes extra = 5;
+}
+message ReqQueryProposalComment {
+    string proposalID = 1;
+    int32  count      = 2;
+    int32  direction  = 3;
+    int64  height     = 4;
+    int32  index      = 5;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>是否必须</th> <th>说明</th></tr></thead> <tbody><tr><td>driver</td> <td>bytes</td> <td>是</td> <td>执行器名称, 这里固定为 autonomy</td></tr> <tr><td>funcName</td> <td>string</td> <td>是</td> <td>操作名称, 这里固定为 ListProposalComment</td></tr> <tr><td>proposalID</td> <td>string</td> <td>否</td> <td>提案ID</td></tr> <tr><td>count</td> <td>int32</td> <td>是</td> <td>查询数量</td></tr> <tr><td>direction</td> <td>int32</td> <td>是</td> <td>查询方向, 0:降序, 1:升序</td></tr> <tr><td>height</td> <td>int64</td> <td>否</td> <td>查询量大翻页查询时候需要输入从某个高度开始</td></tr> <tr><td>index</td> <td>int32</td> <td>否</td> <td>查询量大翻页查询时候需要输入从某个index开始</td></tr></tbody></table> <p><strong>返回数据：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>message ReplyQueryProposalComment {
+    repeated RelationCmt rltCmt = 1;
+}
+message RelationCmt {
+    string repHash = 1;
+    string comment = 2;
+    int64  height  = 3;
+    int32  index   = 4;
+    string hash    = 5;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p><strong>参数说明：</strong></p> <table><thead><tr><th>参数</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>repHash</td> <td>string</td> <td>回复的评论(hash)</td></tr> <tr><td>comment</td> <td>string</td> <td>评论</td></tr> <tr><td>height</td> <td>int64</td> <td>提案高度</td></tr> <tr><td>index</td> <td>int32</td> <td>提案index</td></tr> <tr><td>hash</td> <td>string</td> <td>评论的hash</td></tr></tbody></table></div> <!----> <div class="content__content-bottom"></div> <footer class="page-meta"><div class="edit-link"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon edit-icon"><path d="M117.953 696.992 64.306 959.696l265.931-49.336 450.204-452.505-212.284-213.376-450.204 452.513zm496.384-296.326L219.039 797.993l-46.108-46.34L568.233 354.33l46.104 46.335zm345.357-122.99-114.45 115.04-212.288-213.377 114.45-115.035 212.288 213.371zm0 0" fill="currentColor"></path></svg> <a href="https://github.com/bityuan/bty-docs/edit/main/zh/guide/9.API参考/2.GRPC接口/2.合约接口/12.GRPC autonomy.md" target="_blank" rel="noopener noreferrer">编辑此页</a></div> <!----> <!----></footer> <!----> <!----> <!----> <div class="content__page-bottom"></div></main> <!----></div><div class="global-ui"><!----><div tabindex="-1" role="dialog" aria-hidden="true" class="pswp"><div class="pswp__bg"></div> <div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div> <div class="pswp__item"></div> <div class="pswp__item"></div></div> <div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div> <button class="pswp__button pswp__button--close"></button> <button class="pswp__button pswp__button--share"></button> <button class="pswp__button pswp__button--fs"></button> <button class="pswp__button pswp__button--zoom"></button> <div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div> <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div> <button class="pswp__button pswp__button--arrow--left"></button> <button class="pswp__button pswp__button--arrow--right"></button> <div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div></div></div>
+    <script src="/assets/js/app.f2b147b3.js" defer></script><script src="/assets/js/vendors~layout-Layout.e3a25bcf.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.5d6867c9.js" defer></script><script src="/assets/js/page-autonomy接口.d9921f69.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound~layout-Slide.836cac6a.js" defer></script>
+  </body>
+</html>

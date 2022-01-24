@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>配置文件说明 | BitYuan</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="A demo for vuepress-theme-hope">
+    <meta property="og:url" content="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E.html">
+    <meta property="og:site_name" content="BitYuan">
+    <meta property="og:title" content="配置文件说明">
+    <meta property="og:description" content="配置文件说明&quot;chain33系统配置文件，包含区块链，p2p，存储，共识，账户等各个模块的配置。对于不同的部署环境，部分配置有所不同，但是大部分配置都是通用的。&quot; 模块配置 title 配置 主链的 title 可以使用默认配置，不需要修改。平行链需要配置唯一的 Title，还需要配置平行链上的主币名称 CoinSymbol。 blockchain 模块 ">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh-CN">
+    <meta property="og:locale:alternate" content="en-US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="BitYuan">
+    
+    <link rel="preload" href="/assets/css/0.styles.b9744494.css" as="style"><link rel="preload" href="/assets/js/app.f2b147b3.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Layout.e3a25bcf.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.5d6867c9.js" as="script"><link rel="preload" href="/assets/js/page-配置文件说明.558a3bd9.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound~layout-Slide.836cac6a.js" as="script"><link rel="prefetch" href="/assets/js/84.b4642496.js"><link rel="prefetch" href="/assets/js/85.94fd6858.js"><link rel="prefetch" href="/assets/js/86.05141861.js"><link rel="prefetch" href="/assets/js/87.494461b9.js"><link rel="prefetch" href="/assets/js/88.0fc77b20.js"><link rel="prefetch" href="/assets/js/layout-Blog.f4420d83.js"><link rel="prefetch" href="/assets/js/layout-Layout.6f4f8ad5.js"><link rel="prefetch" href="/assets/js/layout-NotFound.5f1e53ec.js"><link rel="prefetch" href="/assets/js/layout-Slide.cd5c5786.js"><link rel="prefetch" href="/assets/js/page--571b5536.37cf0f8d.js"><link rel="prefetch" href="/assets/js/page-BitYuanIntroduction.da7ea8f3.js"><link rel="prefetch" href="/assets/js/page-BitYuanWalletGuidelines.742b6dbc.js"><link rel="prefetch" href="/assets/js/page-Blockchain模块.a60194c5.js"><link rel="prefetch" href="/assets/js/page-Buildparachain.3210e3c0.js"><link rel="prefetch" href="/assets/js/page-CA工具使用说明.884bef95.js"><link rel="prefetch" href="/assets/js/page-CA服务使用说明.52dd1527.js"><link rel="prefetch" href="/assets/js/page-Chain33RPC接口编程样例.6ae327eb.js"><link rel="prefetch" href="/assets/js/page-Chain33平行链环境配置.d868e45f.js"><link rel="prefetch" href="/assets/js/page-Chain33系统接口.7ccf8cf3.js"><link rel="prefetch" href="/assets/js/page-CreateBitYuanparentBlockchain.908597fb.js"><link rel="prefetch" href="/assets/js/page-Deployblockchainbrowser.5d9bf6ba.js"><link rel="prefetch" href="/assets/js/page-Deploysmartcontract.60da75c9.js"><link rel="prefetch" href="/assets/js/page-Deploywallet.a22ec922.js"><link rel="prefetch" href="/assets/js/page-Dockingwithexternalapplication.35b2ead4.js"><link rel="prefetch" href="/assets/js/page-EVM接口.3fc9df3d.js"><link rel="prefetch" href="/assets/js/page-GRPC接口约定.1d86b433.js"><link rel="prefetch" href="/assets/js/page-Manage.27ef9c08.js"><link rel="prefetch" href="/assets/js/page-Mempool接口.ce4e2f73.js"><link rel="prefetch" href="/assets/js/page-Mempool模块.956fa4e4.js"><link rel="prefetch" href="/assets/js/page-P2P模块.06a96d77.js"><link rel="prefetch" href="/assets/js/page-ParachainTokenIssuance.4f07fb9a.js"><link rel="prefetch" href="/assets/js/page-Project.bddcceb5.js"><link rel="prefetch" href="/assets/js/page-Queue模块.a46c53b6.js"><link rel="prefetch" href="/assets/js/page-RPC模块.988db370.js"><link rel="prefetch" href="/assets/js/page-Token接口.79006c7a.js"><link rel="prefetch" href="/assets/js/page-Trade接口.41023fa3.js"><link rel="prefetch" href="/assets/js/page-Unfreeze.c9ba07b4.js"><link rel="prefetch" href="/assets/js/page-Wallet接口.152623bb.js"><link rel="prefetch" href="/assets/js/page-autonomy接口.d9921f69.js"><link rel="prefetch" href="/assets/js/page-事件接口.e6ce06a9.js"><link rel="prefetch" href="/assets/js/page-交易接口.0e09c4a4.js"><link rel="prefetch" href="/assets/js/page-共识模块.f9519c71.js"><link rel="prefetch" href="/assets/js/page-创建比特元主链节点.98d2c9dd.js"><link rel="prefetch" href="/assets/js/page-区块链接口.1ede2f73.js"><link rel="prefetch" href="/assets/js/page-去中心化应用.b2768e16.js"><link rel="prefetch" href="/assets/js/page-发展趋势.0bc773f9.js"><link rel="prefetch" href="/assets/js/page-命令行工具介绍.09cc8ce6.js"><link rel="prefetch" href="/assets/js/page-国密支持.b892d07e.js"><link rel="prefetch" href="/assets/js/page-多重签名.6267612f.js"><link rel="prefetch" href="/assets/js/page-存储模块.5c1e1715.js"><link rel="prefetch" href="/assets/js/page-对接外部应用.62f73b6b.js"><link rel="prefetch" href="/assets/js/page-平行链共识节点挖矿奖励规则.37f55330.js"><link rel="prefetch" href="/assets/js/page-平行链发行Token.5845fe1e.js"><link rel="prefetch" href="/assets/js/page-平行链资产转移管理介绍.93078d90.js"><link rel="prefetch" href="/assets/js/page-平行链超级节点创建和超级账户管理介绍.17669bce.js"><link rel="prefetch" href="/assets/js/page-执行器接口.063990a5.js"><link rel="prefetch" href="/assets/js/page-执行器模块.56f3ee7b.js"><link rel="prefetch" href="/assets/js/page-技术架构.b079ab30.js"><link rel="prefetch" href="/assets/js/page-挖矿接口.65bd6200.js"><link rel="prefetch" href="/assets/js/page-接口约定.861290ea.js"><link rel="prefetch" href="/assets/js/page-搭建平行链.4fea970d.js"><link rel="prefetch" href="/assets/js/page-文档主页.4c9ddb39.js"><link rel="prefetch" href="/assets/js/page-智能合约.60b21285.js"><link rel="prefetch" href="/assets/js/page-术语介绍.e7e8eaea.js"><link rel="prefetch" href="/assets/js/page-查询余额.5c805e96.js"><link rel="prefetch" href="/assets/js/page-比特元主网环境配置.beef747b.js"><link rel="prefetch" href="/assets/js/page-比特元介绍.ee0d0d50.js"><link rel="prefetch" href="/assets/js/page-比特元的SPOS共识.ad029c1e.js"><link rel="prefetch" href="/assets/js/page-比特元钱包操作手册.eaa85c15.js"><link rel="prefetch" href="/assets/js/page-系统模块.d622e6fa.js"><link rel="prefetch" href="/assets/js/page-网络类型.5c32c196.js"><link rel="prefetch" href="/assets/js/page-账户模型.109b3f0f.js"><link rel="prefetch" href="/assets/js/page-部署区块链浏览器.f3b23359.js"><link rel="prefetch" href="/assets/js/page-部署智能合约.03d62bee.js"><link rel="prefetch" href="/assets/js/page-部署钱包.9529925f.js"><link rel="prefetch" href="/assets/js/page-钱包找回合约.be187460.js"><link rel="prefetch" href="/assets/js/page-钱包模块.f1230c6d.js"><link rel="prefetch" href="/assets/js/page-隐私保护.75638a9c.js"><link rel="prefetch" href="/assets/js/page-食品溯源案例.12b14ac5.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.828f4b6d.js"><link rel="prefetch" href="/assets/js/vendors~mermaid.2ed83d5d.js"><link rel="prefetch" href="/assets/js/vendors~photo-swipe.e67c69ba.js"><link rel="prefetch" href="/assets/js/vendors~reveal.4a701429.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b9744494.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container has-navbar has-sidebar has-anchor"><header class="navbar"><!----> <div class="content__navbar-start"></div> <button title="Sidebar Button" class="sidebar-button"><span class="icon"></span></button> <a href="/zh/" class="home-link router-link-active"><img src="/logo.svg" alt="BitYuan" class="logo"> <!----> <span class="site-name can-hide">BitYuan</span></a> <!----> <div class="content__navbar-center"></div> <div class="links"><button tabindex="-1" aria-hidden="true" class="color-button"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="skin-icon"><path d="M224 800c0 9.6 3.2 44.8 6.4 54.4 6.4 48-48 76.8-48 76.8s80 41.6 147.2 0 134.4-134.4
+        38.4-195.2c-22.4-12.8-41.6-19.2-57.6-19.2C259.2 716.8 227.2 761.6 224 800zM560 675.2l-32
+        51.2c-51.2 51.2-83.2 32-83.2 32 25.6 67.2 0 112-12.8 128 25.6 6.4 51.2 9.6 80 9.6 54.4 0
+        102.4-9.6 150.4-32l0 0c3.2 0 3.2-3.2 3.2-3.2 22.4-16 12.8-35.2
+        6.4-44.8-9.6-12.8-12.8-25.6-12.8-41.6 0-54.4 60.8-99.2 137.6-99.2 6.4 0 12.8 0 22.4
+        0 12.8 0 38.4 9.6 48-25.6 0-3.2 0-3.2 3.2-6.4 0-3.2 3.2-6.4 3.2-6.4 6.4-16 6.4-16 6.4-19.2
+        9.6-35.2 16-73.6 16-115.2 0-105.6-41.6-198.4-108.8-268.8C704 396.8 560 675.2 560 675.2zM224
+        419.2c0-28.8 22.4-51.2 51.2-51.2 28.8 0 51.2 22.4 51.2 51.2 0 28.8-22.4 51.2-51.2 51.2C246.4
+        470.4 224 448 224 419.2zM320 284.8c0-22.4 19.2-41.6 41.6-41.6 22.4 0 41.6 19.2 41.6 41.6 0
+        22.4-19.2 41.6-41.6 41.6C339.2 326.4 320 307.2 320 284.8zM457.6 208c0-12.8 12.8-25.6 25.6-25.6
+        12.8 0 25.6 12.8 25.6 25.6 0 12.8-12.8 25.6-25.6 25.6C470.4 233.6 457.6 220.8 457.6 208zM128
+        505.6C128 592 153.6 672 201.6 736c28.8-60.8 112-60.8 124.8-60.8-16-51.2 16-99.2
+        16-99.2l316.8-422.4c-48-19.2-99.2-32-150.4-32C297.6 118.4 128 291.2 128 505.6zM764.8
+        86.4c-22.4 19.2-390.4 518.4-390.4 518.4-22.4 28.8-12.8 76.8 22.4 99.2l9.6 6.4c35.2 22.4
+        80 12.8 99.2-25.6 0 0 6.4-12.8 9.6-19.2 54.4-105.6 275.2-524.8 288-553.6
+        6.4-19.2-3.2-32-19.2-32C777.6 76.8 771.2 80 764.8 86.4z"></path></svg> <div class="color-picker-menu" style="display:none;"><div class="theme-options"><!----> <div class="darkmode-toggle"><label for="darkmode-toggle" class="desc">主题模式:</label> <div class="darkmode-switch"><div class="switch"><input id="switch" type="checkbox" checked="checked" class="switch-input"> <label for="switch" class="label"><span class="label-content"></span></label></div></div> <!----></div></div></div></button> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/zh/" class="nav-link router-link-active"><!---->
+  主页
+</a></div><div class="nav-item"><a href="/zh/guide/" class="nav-link router-link-active active"><!---->
+  指南
+</a></div></nav> <div class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon i18n-icon" style="width:1rem;height:1rem;vertical-align:middle;margin-left:1rem;"><path d="M639.981 344.075c14.805 44.45 34.542 79.023 69.084 113.596 29.603-29.634 49.34-69.146 64.145-113.596H639.981zM314.33 591.024h128.29l-64.145-172.865-64.145 172.865z" fill="currentColor"></path> <path d="M807.746 116.882H215.643c-54.274 0-98.681 44.45-98.681 98.78v592.677c0 54.329 44.407 98.78 98.68 98.78h592.104c54.273 0 98.681-44.451 98.681-98.78V215.66c0-54.329-39.475-98.78-98.68-98.78zM565.971 754.01c-9.866 9.878-19.738 9.878-29.603 9.878-4.94 0-14.805 0-19.738-4.939-4.939-4.939-9.872 0-9.872-4.939s-4.932-9.878-9.865-19.756c-4.94-9.878-4.94-14.817-9.872-24.695L467.29 655.23H294.592l-19.737 54.33c-9.866 19.755-14.805 34.572-19.738 44.45-4.939 9.878-14.804 9.878-29.603 9.878-9.871 0-19.737-4.939-29.609-9.878-9.865-9.878-14.798-14.817-14.798-24.695 0-4.939 0-9.878 4.933-19.756 4.939-9.878 4.939-14.817 9.865-24.695l108.553-276.583c4.939-9.878 4.939-19.756 9.872-29.633 4.932-9.878 9.865-19.756 14.798-24.695 4.939-4.94 9.872-14.817 19.737-19.756 9.872-4.94 19.738-4.94 29.61-4.94 9.865 0 19.73 0 29.603 4.94 9.865 4.939 14.804 9.878 19.737 19.756 4.933 4.939 9.866 14.817 14.798 24.695 4.94 9.877 9.872 19.755 14.805 34.572l108.553 271.644c9.865 19.756 14.804 34.573 14.804 44.451-4.939 4.94-9.872 14.817-14.804 24.695zm271.378-192.62c-54.273-19.756-93.748-44.451-128.29-74.085-34.536 34.573-78.943 59.268-133.223 74.085l-14.798-24.695c54.273-14.817 98.68-34.573 133.223-69.146-34.542-34.573-64.145-79.024-74.017-128.413h-49.34V319.38h133.228c-9.877-14.817-19.743-34.573-29.609-49.39l14.799-4.94c9.871 14.818 24.676 34.574 34.542 54.33h123.35v24.695h-49.34c-14.798 49.39-39.468 93.84-69.077 123.474 34.541 29.634 74.01 54.329 128.29 69.146l-19.738 24.695z" fill="currentColor"></path></svg> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/" class="nav-link router-link-active"><!---->
+  English
+</a></li><li class="dropdown-item"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/" aria-current="page" class="nav-link router-link-exact-active router-link-active active"><!---->
+  简体中文
+</a></li></ul></div></div></div> <a rel="noopener noreferrer" href="https://github.com/bityuan/bty-docs" target="_blank" class="repo-link can-hide">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <!----> <div class="content__navbar-end"></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!----> <!----> <div class="content__sidebar-top"></div> <nav class="sidebar-nav-links"><div class="nav-item"><a href="/zh/" class="nav-link router-link-active"><!---->
+  主页
+</a></div><div class="nav-item"><a href="/zh/guide/" class="nav-link router-link-active active"><!---->
+  指南
+</a></div> <a rel="noopener noreferrer" href="https://github.com/bityuan/bty-docs" target="_blank" class="repo-link">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <!----> <div class="content__sidebar-center"></div> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><!----> <span class="title">指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/guide/" aria-current="page" class="sidebar-link">比特元介绍 #</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">简介</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">SDK参考</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">升级指南</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">入门</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable open"><!----> <span class="title">进阶</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading clickable"><!----> <span class="title">功能模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading clickable open"><!----> <span class="title">系统使用</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-3"><p class="sidebar-heading clickable"><!----> <span class="title">隐私保护</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-3"><p class="sidebar-heading clickable"><!----> <span class="title">国密支持</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-3"><p class="sidebar-heading clickable"><!----> <span class="title">CA工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-3"><p class="sidebar-heading clickable"><!----> <span class="title">命令行工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-3"><p class="sidebar-heading clickable open"><!----> <span class="title">配置介绍</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/" aria-current="page" class="active sidebar-link">配置文件说明</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#模块配置" class="sidebar-link">模块配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#title-配置" class="sidebar-link heading3">title 配置</a></li><li class="sidebar-sub-header"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#blockchain-模块" class="sidebar-link heading3">blockchain 模块</a></li><li class="sidebar-sub-header"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#p2p-模块" class="sidebar-link heading3">p2p 模块</a></li><li class="sidebar-sub-header"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#rpc-模块" class="sidebar-link heading3">rpc 模块</a></li><li class="sidebar-sub-header"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#mempool-模块" class="sidebar-link heading3">mempool 模块</a></li><li class="sidebar-sub-header"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#consensus-模块" class="sidebar-link heading3">consensus 模块</a></li><li class="sidebar-sub-header"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#store-模块" class="sidebar-link heading3">store 模块</a></li><li class="sidebar-sub-header"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#wallet-模块" class="sidebar-link heading3">wallet 模块</a></li><li class="sidebar-sub-header"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#exec-模块" class="sidebar-link heading3">exec 模块</a></li><li class="sidebar-sub-header"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#health-模块" class="sidebar-link heading3">health 模块</a></li><li class="sidebar-sub-header"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#metrics-模块" class="sidebar-link heading3">metrics 模块</a></li><li class="sidebar-sub-header"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#log-模块" class="sidebar-link heading3">log 模块</a></li></ul></li></ul></li><li><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/2.%E6%AF%94%E7%89%B9%E5%85%83%E4%B8%BB%E7%BD%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="sidebar-link">比特元主网环境配置</a></li><li><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/3.%E5%B9%B3%E8%A1%8C%E9%93%BE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="sidebar-link">Chain33平行链环境配置</a></li></ul></section></li></ul></section></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">智能合约</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">去中心化应用</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">区块链浏览器</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">钱包</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">案例介绍</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">API参考</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li></ul> <!----> <div class="content__sidebar-bottom"></div> <!----></aside> <main class="page"><nav class="breadcrumb disable"><!----></nav> <!----> <div class="content__page-top"></div> <div vocab="https://schema.org/" typeof="Article" class="page-title"><h1><!----> <span property="headline">配置文件说明</span></h1> <div class="page-info"><!----> <!----><!----></div> <!----> <hr></div> <div class="anchor-place-holder"><aside id="anchor"><div class="anchor-wrapper"><ul class="anchor-list"><li class="anchor"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#模块配置" class="anchor-link heading2"><div>模块配置</div></a></li><li class="anchor"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#title-配置" class="anchor-link heading3"><div>title 配置</div></a></li><li class="anchor"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#blockchain-模块" class="anchor-link heading3"><div>blockchain 模块</div></a></li><li class="anchor"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#p2p-模块" class="anchor-link heading3"><div>p2p 模块</div></a></li><li class="anchor"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#rpc-模块" class="anchor-link heading3"><div>rpc 模块</div></a></li><li class="anchor"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#mempool-模块" class="anchor-link heading3"><div>mempool 模块</div></a></li><li class="anchor"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#consensus-模块" class="anchor-link heading3"><div>consensus 模块</div></a></li><li class="anchor"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#store-模块" class="anchor-link heading3"><div>store 模块</div></a></li><li class="anchor"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#wallet-模块" class="anchor-link heading3"><div>wallet 模块</div></a></li><li class="anchor"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#exec-模块" class="anchor-link heading3"><div>exec 模块</div></a></li><li class="anchor"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#health-模块" class="anchor-link heading3"><div>health 模块</div></a></li><li class="anchor"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#metrics-模块" class="anchor-link heading3"><div>metrics 模块</div></a></li><li class="anchor"><a href="/zh/guide/3.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/#log-模块" class="anchor-link heading3"><div>log 模块</div></a></li></ul></div></aside></div> <!----> <div class="content__content-top"></div> <div class="theme-default-content content__default"><h1 id="配置文件说明"><a href="#配置文件说明" class="header-anchor">#</a> 配置文件说明</h1> <blockquote><p>chain33系统配置文件<code>chain33.toml</code>，包含区块链，p2p，存储，共识，账户等各个模块的配置。对于不同的部署环境，部分配置有所不同，但是大部分配置都是通用的。</p></blockquote> <h2 id="模块配置"><a href="#模块配置" class="header-anchor">#</a> 模块配置</h2> <h3 id="title-配置"><a href="#title-配置" class="header-anchor">#</a> title 配置</h3> <p>主链的 title 可以使用默认配置，不需要修改。平行链需要配置唯一的 <code>Title</code>，还需要配置平行链上的主币名称 <code>CoinSymbol</code>。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//平行链 Title 以&quot;user.p.&quot;前缀开头
+Title=&quot;user.p.devtest.&quot;
+//配置主币的名称: 比特元链 bty, 部分未配置的平行链需要配置为 bty，新的平行链配置 para 或其他，不配置 panic
+CoinSymbol=&quot;para&quot;
+//app 的版本
+Version=&quot;1.0.0&quot;
+//是否是测试网络
+TestNet=false
+//是否开启自动修复时间
+FixTime=false
+//是否按照块高度设置过期时间
+TxHeight=false
+//平行链是否开启 fork 功能，没有配置 fork，那么默认所有的fork 为 0
+EnableParaFork=false
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="blockchain-模块"><a href="#blockchain-模块" class="header-anchor">#</a> blockchain 模块</h3> <p>blockchain 模块主要配置区块链节点相关的配置，单节点 <code>singleMode=true</code>, 平行链节点<code>isParaChain=true</code>，其他可配置项使用默认值，也可根据具体情况自行修改。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>//分片存储中每个大块包含的区块数
+chunkblockNum=10000
+//缓存区块的个数
+defCacheSize=128
+//同步区块时一次最多申请获取的区块个数
+maxFetchBlockNum=128
+//向对端节点请求同步区块的时间间隔
+timeoutSeconds=5
+//使用的数据库类型
+driver=&quot;leveldb&quot;
+//数据库文件目录
+dbPath=&quot;datadir&quot;
+//数据库缓存大小
+dbCache=64
+//是否为单节点
+singleMode=false
+//同步区块批量写数据库时，是否需要立即写磁盘，非固态硬盘的电脑可以设置为false，以提高性能
+batchsync=false
+//是否记录添加或者删除区块的序列，若节点作为主链节点，为平行链节点提供服务，需要设置为true
+isRecordBlockSequence=true
+//是否为平行链节点
+isParaChain=false
+//是否开启交易快速查询索引
+enableTxQuickIndex=false
+//是否开启精简localdb
+enableReExecLocal=true
+//区块回退
+rollbackBlock=5
+//回退是否保存区块
+rollbackSave=true
+//最新区块上链超时时间，单位秒。
+onChainTimeout=1
+//使能精简localdb
+enableReduceLocaldb=true
+//关闭分片存储,默认开启分片存储为false;平行链不需要分片需要修改此默认参数为true
+disableShard=false
+//使能从P2pStore中获取数据
+enableFetchP2pstore=true
+//使能注册推送区块、区块头或交易回执
+EnablePushSubscribe=true
+//当前活跃区块的缓存数量
+maxActiveBlockNum=1
+//当前活跃区块的缓存大小M为单位
+maxActiveBlockSize=1
+//允许打包的High区块高度
+highAllowPackHeight=0
+//允许打包的low区块高度
+lowAllowPackHeight=0
+//关闭分片存储,默认false为开启分片存储;平行链不需要分片需要修改此默认参数为true
+disableShard=false
+//分片存储中每个大块包含的区块数
+chunkblockNum=1000
+//使能从P2pStore中获取数据
+enableFetchP2pstore=false
+//使能假设已删除已归档数据后,获取数据情况
+enableIfDelLocalChunk=false
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br></div></div><h3 id="p2p-模块"><a href="#p2p-模块" class="header-anchor">#</a> p2p 模块</h3> <p>p2p 模块配置节点网络通信类型，以及种子节点的信息。网络类型分为 <code>dht</code> 和 <code>gossip</code> 两种，分别对应的 seed 配置也有不同。根据具体情况配置监听端口 <code>port</code> 和 <code>seeds</code>。单节点可以无需配置 p2p，使用默认值即可。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[p2p]
+//使用的数据库类型
+driver=&quot;leveldb&quot;
+//配置p2p网络类型，dht,gossip两种
+types=[&quot;dht&quot;]
+//数据库文件目录
+dbPath=&quot;datadir/addrbook&quot;
+//数据库缓存大小
+dbCache=4
+//GRPC请求日志文件
+grpcLogFile=&quot;grpc33.log&quot;
+//是否等待seed导入
+waitPid=false
+//是否启动P2P服务
+enable=true
+[p2p.sub.gossip]
+port=13802
+//种子节点，格式为ip:port，多个节点以逗号分隔，如seeds=[&quot;10.0.0.1:13802&quot;,&quot;10.0.0.2:13802&quot;,&quot;10.0.0.3:13802&quot;]
+seeds=[]
+isSeed=false
+innerSeedEnable=true
+useGithub=true
+innerBounds=300
+[p2p.sub.dht]
+//默认监听端口号
+port=13803
+//种子节点，格式为/ip4/ip/tcp/port/p2p/peerID，多个节点以逗号分隔，如seeds=[&quot;/ip4/10.0.0.1/tcp/13803/p2p/16Uiu2HAm19JAcWxkryuYShj6RWn3TGP4Y4Er1DwFe7AC4TevbuU6&quot;]
+seeds=[]
+[p2p.sub.dht]
+seeds=[]
+port=13803
+maxConnectNum=100
+//禁止通过局域网发现节点
+disableFindLANPeers=false
+//配置为全节点模式，全节点保存所有分片数据
+isFullNode=true
+//若本节点不是全节点，则需要配置全节点地址，当在分片网络中查不到数据时，会到全节点上获取数据
+//格式: &quot;/ip4/139.196.46.175/tcp/13803/p2p/16Uiu2HAkvnDRF8HQTTU5Uu5GmtbLDrgPxCwgVsn2QQ9VEU7Eiwjw&quot;
+fullNodes=[]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><h3 id="rpc-模块"><a href="#rpc-模块" class="header-anchor">#</a> rpc 模块</h3> <p>rpc 模块主要配置<code>json rpc</code> 和 <code>grpc</code>的监听端口，用户根据实际情况选择，也可以在端口没有冲突的情况下选择默认值。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[rpc]
+//jrpc绑定地址
+jrpcBindAddr=&quot;localhost:8801&quot;
+//grpc绑定地址
+grpcBindAddr=&quot;localhost:8802&quot;
+//白名单列表，允许访问的IP地址，默认是“*”，允许所有IP访问
+Whitelist=[&quot;127.0.0.1&quot;]
+//jrpc方法请求白名单，默认是“*”，允许访问所有RPC方法
+jrpcFuncWhitelist=[&quot;*&quot;]
+//grpc方法请求白名单，默认是“*”，允许访问所有RPC方法
+grpcFuncWhitelist=[&quot;*&quot;]
+//jrpc方法请求黑名单，禁止调用黑名单里配置的rpc方法，一般和白名单配合使用，默认是空
+jrpcFuncBlacklist=[]
+//grpc方法请求黑名单，禁止调用黑名单里配置的rpc方法，一般和白名单配合使用，默认是空
+grpcFuncBlacklist=[]
+//是否开启https
+enableTLS=false
+//grpc的日志是否开启
+enableTrace=true
+//证书文件，证书和私钥文件可以用cli工具生成
+certFile=&quot;cert.pem&quot;
+//私钥文件
+keyFile=&quot;key.pem&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h3 id="mempool-模块"><a href="#mempool-模块" class="header-anchor">#</a> mempool 模块</h3> <p>mempool 模块主要配置交易缓存处理的策略和交易手续费，缓存策略分为 <code>timeline</code>，<code>score</code>，<code>price</code>，用户可根据需要选择不同的策略，其他配置一般情况下使用默认值即可。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[mempool]
+//mempool队列名称，可配，timeline，score，price
+name=&quot;timeline&quot;
+//mempool缓存容量大小，默认10240
+poolCacheSize=10240
+//强制把状态改为同步状态
+forceAccept=false
+//最小得交易手续费用，这个没有默认值，必填，一般是100000
+minTxFee=100000
+//每个账户在mempool中得最大交易数量，默认100
+maxTxNumPerAccount=10000
+//最大得交易手续费用，这个没有默认值，必填，一般是100000
+maxTxFee=1000000000
+//是否开启阶梯手续费
+isLevelFee=false
+//创建最后交易的缓存大小
+maxTxLast=10240
+//最大单元交易费, 默认1e7
+maxTxFeeRate=1000000
+//目前execCheck效率较低，支持关闭交易execCheck，提升性能
+disableExecCheck=false
+//timeline 是默认的先来先进的按时间排序
+[mempool.sub.timeline]
+//mempool缓存容量大小，默认10240
+poolCacheSize=10240
+//score是分数队列模式(分数=常量a*手续费/交易字节数-常量b*时间*定量c，按分数排队，高的优先，常量a，b和定量c可配置)，按分数来排序
+[mempool.sub.score]
+//mempool缓存容量大小，默认10240
+poolCacheSize=10240
+//时间占价格比例
+timeParam=1
+//手续费相对于时间的一个合适的常量，取当前unix时间戳前四位数，排队时手续费高1e-5的分数~=快1s的分数
+priceConstant=1544
+//常量比例
+pricePower=1
+//price是价格队列模式(价格=手续费/交易字节数，价格高者优先，同价则时间早优先)
+[mempool.sub.price]
+//mempool缓存容量大小，默认10240
+poolCacheSize=10240
+//最小得交易手续费用，这个没有默认值，必填，一般是100000
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><h3 id="consensus-模块"><a href="#consensus-模块" class="header-anchor">#</a> consensus 模块</h3> <p>consensus 模块主要配置共识方法和不同共识对应的配置。平行链使用 <code>paracross</code> 共识，不同的共识对应不同的配置。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[consensus]
+//共识名,可选项有 solo,ticket,raft,tendermint,para
+name=&quot;solo&quot;
+//是否开启挖矿,开启挖矿才能创建区块
+minerstart=true
+//创世区块时间(UTC时间)
+genesisBlockTime=1514533394
+//创世交易地址
+genesis=&quot;14KEKbYtKKQm4wMthSK9J4La4nAiidGozt&quot;
+//在线挖矿地址
+hotkeyAddr=&quot;12qyocayNF7Lv6C9qW4avxs2E7U41fKSfv&quot;
+//配置挖矿的合约名单
+minerExecs=[&quot;ticket&quot;, &quot;autonomy&quot;]
+//最优区块选择
+enableBestBlockCmp=true
+[mver.consensus]
+//基金账户地址
+fundKeyAddr = &quot;1BQXS6TxaYYG5mADaWij4AxhZZUTpw95a5&quot;
+//挖矿难度
+powLimitBits = &quot;0x1f00ffff&quot;
+//区块包含最多交易数
+maxTxNumber = 1500
+[mver.consensus.ticket]
+//用户回报
+coinReward = 18
+//发展基金回报
+coinDevFund = 12
+//ticket价格
+ticketPrice = 10000
+//每次调整难度的最大的范围，如果设置成 4 的话，范围是 (1/4 - 4)，一次不能增加 4倍以上的难度，或者难度减少为 原来的 1/4 ，这个参数，是为了难度不会突然爆增加或者减少
+retargetAdjustmentFactor = 4
+//表示如果区块时间大于当前时间 15s ，那么区块就会判定为无效区块。
+futureBlockTime = 15
+//ticket冻结时长
+ticketFrozenTime = 43200
+//ticket取回时长
+ticketWithdrawTime = 172800
+//ticket挖矿等待时长
+ticketMinerWaitTime = 7200
+//调整挖矿难度的间隔，(ps:难度不是每个区块都调整的，而是每隔 targetTimespan / targetTimePerBlock 块调整一次)
+targetTimespan = 2304
+//每个区块打包的目标时间
+targetTimePerBlock = 16
+[consensus.sub.solo]
+//创世交易地址
+genesis=&quot;14KEKbYtKKQm4wMthSK9J4La4nAiidGozt&quot;
+//创世区块时间(UTC时间)
+genesisBlockTime=1514533394
+//等待交易时间，如果 10秒没有交易的话，就出一个空块
+waitTxMs=10
+//是否为基准测试模式
+benchMode=true
+//创世块的配置
+[consensus.sub.ticket]
+//创世区块时间(UTC时间)
+genesisBlockTime=1514533394
+[[consensus.sub.ticket.genesis]]
+//在线挖矿地址
+minerAddr=&quot;12qyocayNF7Lv6C9qW4avxs2E7U41fKSfv&quot;
+//离线地址
+returnAddr=&quot;14KEKbYtKKQm4wMthSK9J4La4nAiidGozt&quot;
+//创世票的数量
+count=10000
+[[consensus.sub.ticket.genesis]]
+minerAddr=&quot;1PUiGcbsccfxW3zuvHXZBJfznziph5miAo&quot;
+returnAddr=&quot;1EbDHAXpoiewjPLX9uqoz38HsKqMXayZrF&quot;
+count=10000
+[[consensus.sub.ticket.genesis]]
+minerAddr=&quot;1EDnnePAZN48aC2hiTDzhkczfF39g1pZZX&quot;
+returnAddr=&quot;1KcCVZLSQYRUwE5EXTsAoQs9LuJW6xwfQa&quot;
+count=10000
+[consensus.sub.tendermint]
+//创世交易地址
+genesis=&quot;1CbEVT9RnM5oZhWMj4fxUrJX94VtRotzvs&quot;
+//创世区块时间(UTC时间)
+genesisBlockTime=1514533394
+//获取交易间隔时长,以下时长单位均为毫秒
+timeoutTxAvail=1000
+//等待proposal超时基准时长
+timeoutPropose=3000
+//每轮延长等待proposal的时长
+timeoutProposeDelta=500
+//等待pre-vote超时基准时长
+timeoutPrevote=1000
+//每轮延长等待pre-vote的时长
+timeoutPrevoteDelta=500
+//等待pre-commit超时基准时长
+timeoutPrecommit=1000
+//每轮延长等待pre-commit的时长
+timeoutPrecommitDelta=500
+//收到对一个区块的2/3pre-commits后,等待落后者投票超时时长,超时后将启动新高度流程
+timeoutCommit=1000
+//是否在收到所有pre-commits,还未达到超时等待时长时,取消等待,如果为true,将启动新高度流程;如果为false,等到超时时才启动新高度流程
+skipTimeoutCommit=true
+//是否允许创建空区块
+createEmptyBlocks=false
+//创建空区块的时间间隔,如果大于0则认为允许出空块
+createEmptyBlocksInterval=0
+//共识节点，格式为ip:port，多个节点以逗号分隔，为了拜占庭容错,节点数至少为4个,如
+validatorNodes=[&quot;10.0.0.1:46656&quot;,&quot;10.0.0.2:46656&quot;,&quot;10.0.0.3:46656&quot;,&quot;10.0.0.4:46656&quot;]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br></div></div><p>用户只需根据实际情况配置共识节点<code>validatorNodes</code>，其他配置可使用默认值。</p> <h3 id="store-模块"><a href="#store-模块" class="header-anchor">#</a> store 模块</h3> <p>区块链存储模块，chain33 支持多种数据存储格式和数据存储驱动，一般情况用户使用默认配置即可，有需要的可以根据实际情况配置不同的存储格式和驱动。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[store]
+//数据存储格式名称，目前支持mavl,kvdb,kvmvcc,mpt
+name=&quot;mavl&quot;
+//数据存储驱动类别，目前支持leveldb,goleveldb,memdb,gobadgerdb,ssdb,pegasus
+driver=&quot;leveldb&quot;
+//数据文件存储路径
+dbPath=&quot;datadir/mavltree&quot;
+//Cache大小
+dbCache=128
+//数据库版本
+localdbVersion=&quot;1.0.0&quot;
+//数据库版本
+storedbVersion=&quot;1.0.0&quot;
+[store.sub.mavl]
+//是否使能mavl加前缀
+enableMavlPrefix=false
+//是否使能MVCC,如果mavl中enableMVCC为true此处必须为true
+enableMVCC=false
+//是否使能mavl数据裁剪
+enableMavlPrune=false
+//裁剪高度间隔
+pruneHeight=10000
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h3 id="wallet-模块"><a href="#wallet-模块" class="header-anchor">#</a> wallet 模块</h3> <p>wallet 模块主要配置账户存储路径和签名方式，签名方式支持 secp256k1, 国密 sm2， ed25519，一般情况下使用默认配置即可，如果有国密签名的需要，可以修改 <code>signType</code>。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[wallet]
+//交易发送最低手续费，单位0.00000001BTY(1e-8),默认100000，即0.001BTY
+minFee=100000
+//walletdb驱动名，支持leveldb/memdb/gobadgerdb/ssdb/pegasus
+driver=&quot;leveldb&quot;
+//walletdb路径
+dbPath=&quot;wallet&quot;
+//walletdb缓存大小
+dbCache=16
+//钱包发送交易签名方式
+signType=&quot;secp256k1&quot;
+//币种名称
+coinType=&quot;bty&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h3 id="exec-模块"><a href="#exec-模块" class="header-anchor">#</a> exec 模块</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>[exec]
+//交易费相关统一在mempool中配置
+//是否开启 stat 插件
+enableStat=false
+//是否开启 MVCC 插件
+enableMVCC=false
+alias=[&quot;token1:token&quot;,&quot;token2:token&quot;,&quot;token3:token&quot;]
+//是否保存token交易信息
+saveTokenTxList=true
+[exec.sub.token]
+//是否保存 token 交易信息
+saveTokenTxList=true
+//token 审批人地址
+tokenApprs = [
+	&quot;1Bsg9j6gW83sShoee1fZAt9TkUjcrCgA9S&quot;,
+	&quot;1Q8hGLfoGe63efeWa8fJ4Pnukhkngt6poK&quot;,
+	&quot;1LY8GFia5EiyoTodMLfkB5PHNNpXRqxhyB&quot;,
+	&quot;1GCzJDS6HbgTQ2emade7mEJGGWFfA15pS9&quot;,
+	&quot;1JYB8sxi4He5pZWHCd3Zi2nypQ4JMB6AxN&quot;,
+	&quot;12qyocayNF7Lv6C9qW4avxs2E7U41fKSfv&quot;,
+]
+[exec.sub.cert]
+//是否启用证书验证和签名
+enable=false
+//加密文件路径
+cryptoPath=&quot;authdir/crypto&quot;
+//带证书签名类型，支持&quot;auth_ecdsa&quot;, &quot;auth_sm2&quot;
+signType=&quot;auth_ecdsa&quot;
+[exec.sub.relay]
+//relay 执行器保存 BTC 头执行权限地址
+genesis=&quot;14KEKbYtKKQm4wMthSK9J4La4nAiidGozt&quot;
+[exec.sub.manage]
+//manage 执行器超级管理员地址
+superManager=[
+    &quot;1Bsg9j6gW83sShoee1fZAt9TkUjcrCgA9S&quot;,
+    &quot;12qyocayNF7Lv6C9qW4avxs2E7U41fKSfv&quot;,
+    &quot;1Q8hGLfoGe63efeWa8fJ4Pnukhkngt6poK&quot;
+]
+[exec.sub.autonomy]
+total=&quot;16htvcBNSEA7fZhAdLJphDwQRQJaHpyHTp&quot;
+useBalance=false
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><h3 id="health-模块"><a href="#health-模块" class="header-anchor">#</a> health 模块</h3> <p>health 模块监听一个节点是否停止服务了的功能。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[health]
+//监听地址是对外服务的地址，缺省是:8805，如果本节点保持和主链同步，则监管服务器可以通过这个监听地址返回，如果失联，则这个监听地址也失效
+listenAddr=&quot;127.0.0.1:8805&quot;
+//本地检查是否同步的时间间隔，单位秒
+checkInterval=5
+//未同步的最大次数
+unSyncMaxTimes=6
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="metrics-模块"><a href="#metrics-模块" class="header-anchor">#</a> metrics 模块</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>[metrics]
+//是否使能发送metrics数据的发送
+enableMetrics=false
+//数据保存模式
+dataEmitMode=&quot;influxdb&quot;
+//以纳秒为单位的发送间隔
+duration=1000000000
+//接收采样数据的地址
+url=&quot;&quot;
+//数据库名称
+databaseName=&quot;&quot;
+//数据库用户名
+username=&quot;&quot;
+//数据库密码
+password=&quot;&quot;
+//域名
+namespace=&quot;&quot;
+[metrics.sub.influxdb]
+//以纳秒为单位的发送间隔
+duration=1000000000
+url=&quot;http://influxdb:8086&quot;
+database=&quot;chain33metrics&quot;
+username=&quot;&quot;
+password=&quot;&quot;
+namespace=&quot;&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h3 id="log-模块"><a href="#log-模块" class="header-anchor">#</a> log 模块</h3> <p>log 模块配置日志级别和保存，一般使用默认值即可。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[log]
+//日志级别，支持debug(dbug)/info/warn/error(eror)/crit
+loglevel = &quot;debug&quot;
+//共识日志级别
+logConsoleLevel = &quot;info&quot;
+//日志文件名，可带目录，所有生成的日志文件都放到此目录下
+logFile = &quot;logs/chain33.para.log&quot;
+//单个日志文件的最大值（单位：兆）
+maxFileSize = 300
+//最多保存的历史日志文件个数
+maxBackups = 100
+//最多保存的历史日志消息（单位：天）
+maxAge = 28
+//日志文件名是否使用本地事件（否则使用UTC时间）
+localTime = true
+//历史日志文件是否压缩（压缩格式为gz）
+compress = true
+//是否打印调用源文件和行号
+callerFile = false
+//是否打印调用方法
+callerFunction = false
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div></div> <!----> <div class="content__content-bottom"></div> <footer class="page-meta"><div class="edit-link"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon edit-icon"><path d="M117.953 696.992 64.306 959.696l265.931-49.336 450.204-452.505-212.284-213.376-450.204 452.513zm496.384-296.326L219.039 797.993l-46.108-46.34L568.233 354.33l46.104 46.335zm345.357-122.99-114.45 115.04-212.288-213.377 114.45-115.035 212.288 213.371zm0 0" fill="currentColor"></path></svg> <a href="https://github.com/bityuan/bty-docs/edit/main/zh/guide/3.进阶/2.系统使用/5.配置介绍/1.配置文件说明.md" target="_blank" rel="noopener noreferrer">编辑此页</a></div> <!----> <!----></footer> <!----> <!----> <!----> <div class="content__page-bottom"></div></main> <!----></div><div class="global-ui"><!----><div tabindex="-1" role="dialog" aria-hidden="true" class="pswp"><div class="pswp__bg"></div> <div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div> <div class="pswp__item"></div> <div class="pswp__item"></div></div> <div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div> <button class="pswp__button pswp__button--close"></button> <button class="pswp__button pswp__button--share"></button> <button class="pswp__button pswp__button--fs"></button> <button class="pswp__button pswp__button--zoom"></button> <div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div> <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div> <button class="pswp__button pswp__button--arrow--left"></button> <button class="pswp__button pswp__button--arrow--right"></button> <div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div></div></div>
+    <script src="/assets/js/app.f2b147b3.js" defer></script><script src="/assets/js/vendors~layout-Layout.e3a25bcf.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.5d6867c9.js" defer></script><script src="/assets/js/page-配置文件说明.558a3bd9.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound~layout-Slide.836cac6a.js" defer></script>
+  </body>
+</html>
