@@ -12,3 +12,5 @@ git commit -m `date +%Y%m%d-%H%M%S`
  
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push origin
+
+echo '发布成功. 👉 https://docs.bityuan.com'
