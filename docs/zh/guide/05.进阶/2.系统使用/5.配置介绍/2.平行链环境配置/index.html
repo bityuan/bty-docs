@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>平行链环境配置 | BitYuan</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="A demo for vuepress-theme-hope">
+    <meta property="og:url" content="/zh/guide/05.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/2.%E5%B9%B3%E8%A1%8C%E9%93%BE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html">
+    <meta property="og:site_name" content="BitYuan">
+    <meta property="og:title" content="平行链环境配置">
+    <meta property="og:description" content="平行链环境配置 以下是平行链环境的配置项以及各参数含义的说明：">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh-CN">
+    <meta property="og:locale:alternate" content="en-US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="BitYuan">
+    
+    <link rel="preload" href="/assets/css/0.styles.b9744494.css" as="style"><link rel="preload" href="/assets/js/app.8fa71e60.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Layout.a19c9031.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.273fc434.js" as="script"><link rel="preload" href="/assets/js/page-平行链环境配置.320611b1.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound~layout-Slide.4a182f2f.js" as="script"><link rel="prefetch" href="/assets/js/133.50a00c3a.js"><link rel="prefetch" href="/assets/js/134.f53144e9.js"><link rel="prefetch" href="/assets/js/135.772c2874.js"><link rel="prefetch" href="/assets/js/136.052cafdc.js"><link rel="prefetch" href="/assets/js/137.ee4c82a8.js"><link rel="prefetch" href="/assets/js/layout-Blog.2e705dee.js"><link rel="prefetch" href="/assets/js/layout-Layout.85d11602.js"><link rel="prefetch" href="/assets/js/layout-NotFound.52e1e1ba.js"><link rel="prefetch" href="/assets/js/layout-Slide.62c528f5.js"><link rel="prefetch" href="/assets/js/page-AccountModel.e419e105.js"><link rel="prefetch" href="/assets/js/page-BalanceInquiry.a46c4e95.js"><link rel="prefetch" href="/assets/js/page-BitYuanIntroduction.02297e27.js"><link rel="prefetch" href="/assets/js/page-BitYuanMainNetworkEnvironmentConfiguration.0c7116a9.js"><link rel="prefetch" href="/assets/js/page-BitYuanWalletGuidelines.9892de01.js"><link rel="prefetch" href="/assets/js/page-BlockchainInterface.bab9b261.js"><link rel="prefetch" href="/assets/js/page-BlockchainModule.d436063d.js"><link rel="prefetch" href="/assets/js/page-Blockchain模块.b5f1f3d4.js"><link rel="prefetch" href="/assets/js/page-Buildparachain.e761c460.js"><link rel="prefetch" href="/assets/js/page-CA工具使用说明.fe6d34fc.js"><link rel="prefetch" href="/assets/js/page-CA服务使用说明.c7f1da2f.js"><link rel="prefetch" href="/assets/js/page-CaseFoodTraceability.e811b86a.js"><link rel="prefetch" href="/assets/js/page-Chain33系统接口.a0bb5d34.js"><link rel="prefetch" href="/assets/js/page-CompatiblewithEthereumEVM.718ecdb8.js"><link rel="prefetch" href="/assets/js/page-ConsensusModule.2fa805bd.js"><link rel="prefetch" href="/assets/js/page-CreateBitYuanparentBlockchain.f9e00aab.js"><link rel="prefetch" href="/assets/js/page-DAPPdevelopmentinGolanguage.1d87eb45.js"><link rel="prefetch" href="/assets/js/page-DAPPdevelopmentinJavaScriptlanguage.a727afea.js"><link rel="prefetch" href="/assets/js/page-DAPPdevelopmentinSoliditylanguage.fda0a25c.js"><link rel="prefetch" href="/assets/js/page-DAPP开发介绍.bb3bffaf.js"><link rel="prefetch" href="/assets/js/page-DecentralizedApplication.ca424fa8.js"><link rel="prefetch" href="/assets/js/page-Deployblockchainbrowser.d848535e.js"><link rel="prefetch" href="/assets/js/page-Deploysmartcontract.7c1b71ee.js"><link rel="prefetch" href="/assets/js/page-Deploywallet.8da0fe9b.js"><link rel="prefetch" href="/assets/js/page-Dockingwithexternalapplication.5bfde03f.js"><link rel="prefetch" href="/assets/js/page-EVMInterface.f926f890.js"><link rel="prefetch" href="/assets/js/page-EVM接口.cc4b0df5.js"><link rel="prefetch" href="/assets/js/page-EventInterface.f92449f3.js"><link rel="prefetch" href="/assets/js/page-ExecutorInterface.b6016d9e.js"><link rel="prefetch" href="/assets/js/page-ExecutorModule.0aa97b57.js"><link rel="prefetch" href="/assets/js/page-GRPC接口约定.bd748a0c.js"><link rel="prefetch" href="/assets/js/page-Go语言开发DAPP.bc37214c.js"><link rel="prefetch" href="/assets/js/page-InterfaceContract.2b0a4cfa.js"><link rel="prefetch" href="/assets/js/page-IntroductiontoDAppDevelopment.4b8188f6.js"><link rel="prefetch" href="/assets/js/page-JavaScript语言开发DAPP.f5434b83.js"><link rel="prefetch" href="/assets/js/page-Manage.287dbb58.js"><link rel="prefetch" href="/assets/js/page-ManageInterface.0b092818.js"><link rel="prefetch" href="/assets/js/page-MempoolInterface.832c7b21.js"><link rel="prefetch" href="/assets/js/page-MempoolModule.12c38a36.js"><link rel="prefetch" href="/assets/js/page-Mempool接口.413d4d25.js"><link rel="prefetch" href="/assets/js/page-Mempool模块.7df598c5.js"><link rel="prefetch" href="/assets/js/page-MiningInterface.d1e2666d.js"><link rel="prefetch" href="/assets/js/page-NetworkType.db42727a.js"><link rel="prefetch" href="/assets/js/page-P2PModule.8e04b0b3.js"><link rel="prefetch" href="/assets/js/page-P2P模块.3e7663c4.js"><link rel="prefetch" href="/assets/js/page-ParachainTokenIssuance.f681dd2a.js"><link rel="prefetch" href="/assets/js/page-Project.c254a89d.js"><link rel="prefetch" href="/assets/js/page-QueueModule.344d7c45.js"><link rel="prefetch" href="/assets/js/page-Queue模块.11f6310a.js"><link rel="prefetch" href="/assets/js/page-RPCModule.51b01b53.js"><link rel="prefetch" href="/assets/js/page-RPC接口编程样例.ab7dfc0f.js"><link rel="prefetch" href="/assets/js/page-RPC模块.d85b10cc.js"><link rel="prefetch" href="/assets/js/page-SPOSConsensus.bbdac020.js"><link rel="prefetch" href="/assets/js/page-SPOS共识.e3f15a29.js"><link rel="prefetch" href="/assets/js/page-SmartContract.c425a199.js"><link rel="prefetch" href="/assets/js/page-Solidity语言开发DAPP.0815aa10.js"><link rel="prefetch" href="/assets/js/page-StorageModule.00c0ff67.js"><link rel="prefetch" href="/assets/js/page-StorageSharding.194e0396.js"><link rel="prefetch" href="/assets/js/page-SystemInterface.95a9f6f8.js"><link rel="prefetch" href="/assets/js/page-SystemModule.f9ab57f3.js"><link rel="prefetch" href="/assets/js/page-TechnicalArchitecture.9a568531.js"><link rel="prefetch" href="/assets/js/page-Terminology.211809ac.js"><link rel="prefetch" href="/assets/js/page-TokenInterface.4a1c78c9.js"><link rel="prefetch" href="/assets/js/page-Token接口.92c82bee.js"><link rel="prefetch" href="/assets/js/page-Trade.000eb624.js"><link rel="prefetch" href="/assets/js/page-Trade接口.52f4ecde.js"><link rel="prefetch" href="/assets/js/page-TransactionInterface.ecc3d3b4.js"><link rel="prefetch" href="/assets/js/page-Unfreeze.1b05c84a.js"><link rel="prefetch" href="/assets/js/page-UnfreezeInterface.52716680.js"><link rel="prefetch" href="/assets/js/page-WalletInterface.2aae5a9a.js"><link rel="prefetch" href="/assets/js/page-WalletModule.ca8ed656.js"><link rel="prefetch" href="/assets/js/page-WalletRecoveryContract.dc37f2bc.js"><link rel="prefetch" href="/assets/js/page-Wallet接口.7669a3d6.js"><link rel="prefetch" href="/assets/js/page-Zero-KnowledgeProof.e969a0a9.js"><link rel="prefetch" href="/assets/js/page-autonomy接口.90f690d1.js"><link rel="prefetch" href="/assets/js/page-事件接口.a732e92b.js"><link rel="prefetch" href="/assets/js/page-交易接口.699514b4.js"><link rel="prefetch" href="/assets/js/page-公链发展趋势.86ea2ced.js"><link rel="prefetch" href="/assets/js/page-共识模块.20168410.js"><link rel="prefetch" href="/assets/js/page-兼容以太坊EVM.efad5c73.js"><link rel="prefetch" href="/assets/js/page-创建比特元主链节点.f0af322f.js"><link rel="prefetch" href="/assets/js/page-区块链接口.c7eb499a.js"><link rel="prefetch" href="/assets/js/page-去中心化应用.70382647.js"><link rel="prefetch" href="/assets/js/page-命令行工具介绍.0a7362a6.js"><link rel="prefetch" href="/assets/js/page-国密支持.0c466355.js"><link rel="prefetch" href="/assets/js/page-多重签名.8e8dcd07.js"><link rel="prefetch" href="/assets/js/page-存储分片.6f9d0a3e.js"><link rel="prefetch" href="/assets/js/page-存储模块.4c601e04.js"><link rel="prefetch" href="/assets/js/page-对接外部应用.2dd9ffbe.js"><link rel="prefetch" href="/assets/js/page-平行链共识节点挖矿奖励规则.03484c06.js"><link rel="prefetch" href="/assets/js/page-平行链发行Token.25cfcafe.js"><link rel="prefetch" href="/assets/js/page-平行链资产转移管理介绍.2161035f.js"><link rel="prefetch" href="/assets/js/page-平行链超级节点创建和超级账户管理介绍.69528726.js"><link rel="prefetch" href="/assets/js/page-执行器接口.ffc8f000.js"><link rel="prefetch" href="/assets/js/page-执行器模块.59eea05f.js"><link rel="prefetch" href="/assets/js/page-技术架构.c41a183f.js"><link rel="prefetch" href="/assets/js/page-挖矿接口.2bd55558.js"><link rel="prefetch" href="/assets/js/page-接口约定.d4067e82.js"><link rel="prefetch" href="/assets/js/page-搭建平行链.f816dcba.js"><link rel="prefetch" href="/assets/js/page-文档主页.dcce1a73.js"><link rel="prefetch" href="/assets/js/page-智能合约.d4a324fa.js"><link rel="prefetch" href="/assets/js/page-术语介绍.cae73342.js"><link rel="prefetch" href="/assets/js/page-查询余额.c117cd57.js"><link rel="prefetch" href="/assets/js/page-比特元主网环境配置.4e5e9104.js"><link rel="prefetch" href="/assets/js/page-比特元介绍.13964913.js"><link rel="prefetch" href="/assets/js/page-比特元钱包操作手册.89c00c5f.js"><link rel="prefetch" href="/assets/js/page-系统模块.2e07102c.js"><link rel="prefetch" href="/assets/js/page-系统要求.83d6c762.js"><link rel="prefetch" href="/assets/js/page-网络类型.42f89620.js"><link rel="prefetch" href="/assets/js/page-账户模型.c7c8003f.js"><link rel="prefetch" href="/assets/js/page-部署区块链浏览器.f699266b.js"><link rel="prefetch" href="/assets/js/page-部署智能合约.6260f74a.js"><link rel="prefetch" href="/assets/js/page-部署钱包.a374824c.js"><link rel="prefetch" href="/assets/js/page-钱包找回合约.6cb50729.js"><link rel="prefetch" href="/assets/js/page-钱包模块.55920044.js"><link rel="prefetch" href="/assets/js/page-错误码.94a9de0f.js"><link rel="prefetch" href="/assets/js/page-隐私保护.649f8bd3.js"><link rel="prefetch" href="/assets/js/page-零知识证明.98b4cc10.js"><link rel="prefetch" href="/assets/js/page-食品溯源案例.bca872bb.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.a411b316.js"><link rel="prefetch" href="/assets/js/vendors~mermaid.5d4c3a0d.js"><link rel="prefetch" href="/assets/js/vendors~photo-swipe.5a1ef4f7.js"><link rel="prefetch" href="/assets/js/vendors~reveal.d5a18eb1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b9744494.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container has-navbar has-sidebar has-anchor"><header class="navbar"><!----> <div class="content__navbar-start"></div> <button title="Sidebar Button" class="sidebar-button"><span class="icon"></span></button> <a href="/zh/" class="home-link router-link-active"><img src="/logo.svg" alt="BitYuan" class="logo"> <!----> <span class="site-name can-hide">BitYuan</span></a> <!----> <div class="content__navbar-center"></div> <div class="links"><button tabindex="-1" aria-hidden="true" class="color-button"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="skin-icon"><path d="M224 800c0 9.6 3.2 44.8 6.4 54.4 6.4 48-48 76.8-48 76.8s80 41.6 147.2 0 134.4-134.4
+        38.4-195.2c-22.4-12.8-41.6-19.2-57.6-19.2C259.2 716.8 227.2 761.6 224 800zM560 675.2l-32
+        51.2c-51.2 51.2-83.2 32-83.2 32 25.6 67.2 0 112-12.8 128 25.6 6.4 51.2 9.6 80 9.6 54.4 0
+        102.4-9.6 150.4-32l0 0c3.2 0 3.2-3.2 3.2-3.2 22.4-16 12.8-35.2
+        6.4-44.8-9.6-12.8-12.8-25.6-12.8-41.6 0-54.4 60.8-99.2 137.6-99.2 6.4 0 12.8 0 22.4
+        0 12.8 0 38.4 9.6 48-25.6 0-3.2 0-3.2 3.2-6.4 0-3.2 3.2-6.4 3.2-6.4 6.4-16 6.4-16 6.4-19.2
+        9.6-35.2 16-73.6 16-115.2 0-105.6-41.6-198.4-108.8-268.8C704 396.8 560 675.2 560 675.2zM224
+        419.2c0-28.8 22.4-51.2 51.2-51.2 28.8 0 51.2 22.4 51.2 51.2 0 28.8-22.4 51.2-51.2 51.2C246.4
+        470.4 224 448 224 419.2zM320 284.8c0-22.4 19.2-41.6 41.6-41.6 22.4 0 41.6 19.2 41.6 41.6 0
+        22.4-19.2 41.6-41.6 41.6C339.2 326.4 320 307.2 320 284.8zM457.6 208c0-12.8 12.8-25.6 25.6-25.6
+        12.8 0 25.6 12.8 25.6 25.6 0 12.8-12.8 25.6-25.6 25.6C470.4 233.6 457.6 220.8 457.6 208zM128
+        505.6C128 592 153.6 672 201.6 736c28.8-60.8 112-60.8 124.8-60.8-16-51.2 16-99.2
+        16-99.2l316.8-422.4c-48-19.2-99.2-32-150.4-32C297.6 118.4 128 291.2 128 505.6zM764.8
+        86.4c-22.4 19.2-390.4 518.4-390.4 518.4-22.4 28.8-12.8 76.8 22.4 99.2l9.6 6.4c35.2 22.4
+        80 12.8 99.2-25.6 0 0 6.4-12.8 9.6-19.2 54.4-105.6 275.2-524.8 288-553.6
+        6.4-19.2-3.2-32-19.2-32C777.6 76.8 771.2 80 764.8 86.4z"></path></svg> <div class="color-picker-menu" style="display:none;"><div class="theme-options"><!----> <div class="darkmode-toggle"><label for="darkmode-toggle" class="desc">主题模式:</label> <div class="darkmode-switch"><div class="switch"><input id="switch" type="checkbox" checked="checked" class="switch-input"> <label for="switch" class="label"><span class="label-content"></span></label></div></div> <!----></div></div></div></button> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/zh/" class="nav-link router-link-active"><!---->
+  主页
+</a></div><div class="nav-item"><a href="/zh/guide/" class="nav-link router-link-active active"><!---->
+  指南
+</a></div></nav> <div class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon i18n-icon" style="width:1rem;height:1rem;vertical-align:middle;margin-left:1rem;"><path d="M639.981 344.075c14.805 44.45 34.542 79.023 69.084 113.596 29.603-29.634 49.34-69.146 64.145-113.596H639.981zM314.33 591.024h128.29l-64.145-172.865-64.145 172.865z" fill="currentColor"></path> <path d="M807.746 116.882H215.643c-54.274 0-98.681 44.45-98.681 98.78v592.677c0 54.329 44.407 98.78 98.68 98.78h592.104c54.273 0 98.681-44.451 98.681-98.78V215.66c0-54.329-39.475-98.78-98.68-98.78zM565.971 754.01c-9.866 9.878-19.738 9.878-29.603 9.878-4.94 0-14.805 0-19.738-4.939-4.939-4.939-9.872 0-9.872-4.939s-4.932-9.878-9.865-19.756c-4.94-9.878-4.94-14.817-9.872-24.695L467.29 655.23H294.592l-19.737 54.33c-9.866 19.755-14.805 34.572-19.738 44.45-4.939 9.878-14.804 9.878-29.603 9.878-9.871 0-19.737-4.939-29.609-9.878-9.865-9.878-14.798-14.817-14.798-24.695 0-4.939 0-9.878 4.933-19.756 4.939-9.878 4.939-14.817 9.865-24.695l108.553-276.583c4.939-9.878 4.939-19.756 9.872-29.633 4.932-9.878 9.865-19.756 14.798-24.695 4.939-4.94 9.872-14.817 19.737-19.756 9.872-4.94 19.738-4.94 29.61-4.94 9.865 0 19.73 0 29.603 4.94 9.865 4.939 14.804 9.878 19.737 19.756 4.933 4.939 9.866 14.817 14.798 24.695 4.94 9.877 9.872 19.755 14.805 34.572l108.553 271.644c9.865 19.756 14.804 34.573 14.804 44.451-4.939 4.94-9.872 14.817-14.804 24.695zm271.378-192.62c-54.273-19.756-93.748-44.451-128.29-74.085-34.536 34.573-78.943 59.268-133.223 74.085l-14.798-24.695c54.273-14.817 98.68-34.573 133.223-69.146-34.542-34.573-64.145-79.024-74.017-128.413h-49.34V319.38h133.228c-9.877-14.817-19.743-34.573-29.609-49.39l14.799-4.94c9.871 14.818 24.676 34.574 34.542 54.33h123.35v24.695h-49.34c-14.798 49.39-39.468 93.84-69.077 123.474 34.541 29.634 74.01 54.329 128.29 69.146l-19.738 24.695z" fill="currentColor"></path></svg> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/" class="nav-link router-link-active"><!---->
+  English
+</a></li><li class="dropdown-item"><a href="/zh/guide/05.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/2.%E5%B9%B3%E8%A1%8C%E9%93%BE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" aria-current="page" class="nav-link router-link-exact-active router-link-active active"><!---->
+  简体中文
+</a></li></ul></div></div></div> <a rel="noopener noreferrer" href="https://github.com/bityuan/bty-docs" target="_blank" class="repo-link can-hide">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <!----> <div class="content__navbar-end"></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!----> <!----> <div class="content__sidebar-top"></div> <nav class="sidebar-nav-links"><div class="nav-item"><a href="/zh/" class="nav-link router-link-active"><!---->
+  主页
+</a></div><div class="nav-item"><a href="/zh/guide/" class="nav-link router-link-active active"><!---->
+  指南
+</a></div> <a rel="noopener noreferrer" href="https://github.com/bityuan/bty-docs" target="_blank" class="repo-link">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <!----> <div class="content__sidebar-center"></div> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><!----> <span class="title">指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/guide/" aria-current="page" class="sidebar-link">比特元介绍</a></li><li><a href="/zh/guide/00.%E9%9B%B6%E7%9F%A5%E8%AF%86%E8%AF%81%E6%98%8E/" class="sidebar-link">零知识证明</a></li><li><a href="/zh/guide/01.%E5%85%BC%E5%AE%B9%E4%BB%A5%E5%A4%AA%E5%9D%8AEVM/" class="sidebar-link">兼容以太坊 EVM</a></li><li><a href="/zh/guide/02.%E5%AD%98%E5%82%A8%E5%88%86%E7%89%87/" class="sidebar-link">存储分片</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">简介</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">入门</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable open"><!----> <span class="title">进阶</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading clickable"><!----> <span class="title">功能模块</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading clickable open"><!----> <span class="title">系统使用</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/guide/05.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/1.%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4/" class="sidebar-link">隐私保护</a></li><li><a href="/zh/guide/05.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/2.%E5%9B%BD%E5%AF%86%E6%94%AF%E6%8C%81/" class="sidebar-link">国密支持</a></li><li><section class="sidebar-group collapsable is-sub-group depth-3"><p class="sidebar-heading clickable"><!----> <span class="title">CA工具</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/zh/guide/05.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/4.%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D/" class="sidebar-link">命令行工具介绍</a></li><li><section class="sidebar-group collapsable is-sub-group depth-3"><p class="sidebar-heading clickable open"><!----> <span class="title">配置介绍</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/zh/guide/05.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/1.%E6%AF%94%E7%89%B9%E5%85%83%E4%B8%BB%E7%BD%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="sidebar-link">比特元主网环境配置</a></li><li><a href="/zh/guide/05.%E8%BF%9B%E9%98%B6/2.%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/5.%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/2.%E5%B9%B3%E8%A1%8C%E9%93%BE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" aria-current="page" class="active sidebar-link">平行链环境配置</a></li></ul></section></li></ul></section></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">去中心化应用</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">区块链浏览器</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">钱包</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">API参考</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading clickable"><!----> <span class="title">案例介绍</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li></ul> <!----> <div class="content__sidebar-bottom"></div> <!----></aside> <main class="page"><nav class="breadcrumb disable"><!----></nav> <!----> <div class="content__page-top"></div> <div vocab="https://schema.org/" typeof="Article" class="page-title"><h1><!----> <span property="headline">平行链环境配置</span></h1> <div class="page-info"><!----> <!----><!----></div> <!----> <hr></div> <div class="anchor-place-holder"><aside id="anchor"><div class="anchor-wrapper"></div></aside></div> <!----> <div class="content__content-top"></div> <div class="theme-default-content content__default"><h1 id="平行链环境配置"><a href="#平行链环境配置" class="header-anchor">#</a> 平行链环境配置</h1> <p>以下是平行链环境的配置项以及各参数含义的说明：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Title = &quot;user.p.testchain.&quot;
+TestNet = false
+CoinSymbol = &quot;TEST&quot;
+EnableParaFork = true
+[log]
+  //日志级别，支持debug(dbug)/info/warn/error(eror)/crit
+  loglevel = &quot;debug&quot;
+  logConsoleLevel = &quot;info&quot;
+  //日志文件名，可带目录，所有生成的日志文件都放到此目录下
+  logFile = &quot;logs/chain33.para.log&quot;
+  //单个日志文件的最大值（单位：兆）
+  maxFileSize = 300
+  //最多保存的历史日志文件个数
+  maxBackups = 100
+  //最多保存的历史日志消息（单位：天）
+  maxAge = 28
+  //日志文件名是否使用本地事件（否则使用UTC时间）
+  localTime = true
+  //历史日志文件是否压缩（压缩格式为gz）
+  compress = true
+  //是否打印调用源文件和行号
+  callerFile = false
+  //是否打印调用方法
+  callerFunction = false
+[blockchain]
+  defCacheSize = 128
+  maxFetchBlockNum = 128
+  timeoutSeconds = 5
+  batchBlockNum = 128
+  driver = &quot;leveldb&quot;
+  dbPath = &quot;paradatadir&quot;
+  dbCache = 64
+  isStrongConsistency = true
+  singleMode = true
+  batchsync = false
+  //平行链钱包通过平行链区块seqence索引高度，缺省是true
+  isRecordBlockSequence=true
+  isParaChain = true
+  enableTxQuickIndex=true
+  //升级storedb是否重新执行localdb，bityuan主链升级不需要开启，平行链升级需要开启
+  enableReExecLocal=true
+  //使能精简localdb
+  enableReduceLocaldb=false
+  enablePushSubscribe=false
+[p2p]
+  types=[&quot;dht&quot;]
+  enable=false
+  driver=&quot;leveldb&quot;
+  dbPath=&quot;paradatadir/addrbook&quot;
+  dbCache=4
+  grpcLogFile=&quot;grpc33.log&quot;
+  waitPid=true
+[p2p.sub.dht]
+  DHTDataPath=&quot;paradatadir/p2pstore&quot;
+[rpc]
+  // 避免与主链配置冲突
+  jrpcBindAddr = &quot;:8901&quot;
+  grpcBindAddr = &quot;:8902&quot;
+  whitelist = [&quot;127.0.0.1&quot;]
+  jrpcFuncWhitelist = [&quot;*&quot;]
+  grpcFuncWhitelist = [&quot;*&quot;]
+[mempool]
+  name = &quot;para&quot;
+  poolCacheSize = 10240
+  //如果主链没有交易费，对应平行链minTxFeeRate需要设为0
+  minTxFeeRate = 100000
+  maxTxNumPerAccount = 10000
+[consensus]
+  name = &quot;para&quot;
+  genesisBlockTime = 1514533390
+  genesis = &quot;14KEKbYtKKQm4wMthSK9J4La4nAiidGozt&quot;
+  //配置挖矿合约
+  minerExecs = [&quot;paracross&quot;]
+[mver.consensus]
+  fundKeyAddr = &quot;1BQXS6TxaYYG5mADaWij4AxhZZUTpw95a5&quot;
+  powLimitBits = &quot;0x1f00ffff&quot;
+  maxTxNumber = 1600 
+[mver.consensus.paracross]
+  //超级节点挖矿奖励
+  coinReward=18
+  //发展基金奖励
+  coinDevFund=12
+  //如果超级节点上绑定了委托账户，则奖励超级节点coinBaseReward，其余部分(coinReward-coinBaseReward)按权重分给委托账户
+  coinBaseReward=3
+  //委托账户最少解绑定时间(按小时)
+  unBindTime=24
+  //支持挖矿奖励的1e8小数模式，比如18coin 需要配置成1800000000 以支持小数位后的配置,如果true，意味着已经打开即须配置coinReward=1800000000
+  decimalMode=false
+  //挖矿模式， normal：缺省挖矿，其他自定义，注册名字需要和配置名字保持一致
+  minerMode=&quot;normal&quot;
+  //挖矿减半周期,按高度减半
+  halvePeriod=1000
+[consensus.sub.para]
+  //主链节点的grpc服务器ip，当前可以支持多ip负载均衡，如“118.31.177.1:8802,39.97.2.127:8802”
+  //ParaRemoteGrpcClient=&quot;jiedian2.bityuan.com,cloud.bityuan.com&quot;
+  ParaRemoteGrpcClient=&quot;localhost:8802&quot;
+  //主链指定高度的区块开始同步
+  startHeight=345850
+  //主链指定高度后等待块数，防止主链回滚，联盟链最小为1，小于1则采用缺省高度100
+  //waitMainBlockNum=100
+  //等待打包主链区块时间间隔，单位毫秒
+  writeBlockMsec=2000
+  //共识节点账户，共识节点需要配置自己的账户，并且钱包导入对应种子，非共识节点留空
+  authAccount=&quot;&quot;
+  //创世地址额度
+  genesisAmount=100000000
+  //主链支持平行链共识tx分叉高度，需要和主链保持严格一致,不可修改,2270000是bityuan主链对应高度， ycc或其他按实际修改
+  //不可为0，主链Local时候需特殊配置
+  mainForkParacrossCommitTx=2270000
+  //主链开启循环检查共识交易done的fork高度,需要和主链保持严格一致,不可修改,4320000是bityuan主链对应高度， ycc或其他按实际修改
+  //不可为0，主链Local时候需特殊配置
+  mainLoopCheckCommitTxDoneForkHeight=4320000
+  //无平行链交易的主链区块间隔，平行链产生一个空块，从高度0开始，配置[blockHeight:interval],比如[&quot;0:50&quot;,&quot;1000:100&quot;]
+  emptyBlockInterval=[&quot;0:50&quot;]
+  //平行链共识节点聚合签名配置
+[consensus.sub.para.bls]
+  //是否开启聚合签名，缺省不开启
+  blsSign=false
+[store]
+  name = &quot;kvmvccmavl&quot;
+  driver = &quot;leveldb&quot;
+  storedbVersion = &quot;2.0.0&quot;
+  dbPath = &quot;paradatadir/mavltree&quot;
+  dbCache = 128
+[store.sub.mavl]
+  enableMavlPrefix = false
+  enableMVCC = false
+  enableMavlPrune = false
+  pruneHeight = 10000
+  //是否使能mavl数据载入内存
+  enableMemTree=true
+  //是否使能mavl叶子节点数据载入内存
+  enableMemVal=true
+  //缓存close ticket数目，该缓存越大同步速度越快，最大设置到1500000
+  tkCloseCacheLen=100000
+[store.sub.kvmvccmavl]
+  enableMVCCIter=true
+  enableMavlPrefix=false
+  enableMVCC=false
+  enableMavlPrune=false
+  pruneMavlHeight=10000
+  enableMVCCPrune=false
+  pruneMVCCHeight=10000
+  //是否使能mavl数据载入内存
+  enableMemTree=true
+  //是否使能mavl叶子节点数据载入内存
+  enableMemVal=true
+  //缓存close ticket数目，该缓存越大同步速度越快，最大设置到1500000
+  tkCloseCacheLen=100000
+  //该参数针对平行链，如果平行链的ForkKvmvccmavl高度不为0,需要开启此功能,开启此功能需要从0开始执行区块
+  enableEmptyBlockHandle=false
+[wallet]
+  minFee = 100000
+  driver = &quot;leveldb&quot;
+  dbPath = &quot;parawallet&quot;
+  dbCache = 16
+  signType = &quot;secp256k1&quot;
+  minerdisable = true
+[exec]
+  enableStat = false
+  enableMVCC = false
+  [exec.sub]
+    [exec.sub.relay]
+      genesis = &quot;1JmFaA6unrCFYEWPGRi7uuXY1KthTJxJEP&quot;
+    [exec.sub.manage]
+      superManager = [&quot;14KEKbYtKKQm4wMthSK9J4La4nAiidGozt&quot;]
+      //autonomy执行器名字,空则不开启,使用superManager list
+      autonomyExec=&quot;&quot;
+    [exec.sub.token]
+      saveTokenTxList = true
+      tokenApprs = [&quot;14KEKbYtKKQm4wMthSK9J4La4nAiidGozt&quot;]
+    [exec.sub.paracross]
+      //平行链自共识停止n个空块的对应主链高度后，超级账户可以直接参与投票,这个高度只在主链有效
+      paraConsensusStopBlocks = 30000
+    [exec.sub.autonomy]
+      total = &quot;16htvcBNSEA7fZhAdLJphDwQRQJaHpyHTp&quot;
+      useBalance = false
+    [exec.sub.evm]
+      //平行链evm合约ETH资产映射的合约和资产类型（symbol）
+      ethMapFromExecutor=&quot;paracross&quot;
+      ethMapFromSymbol=&quot;coins.bty&quot;
+    [exec.sub.mix]
+      //私对私的交易费,交易比较大，需要多的手续费
+      txFee=0
+      //私对私token转账，花费token(true)还是BTY(false),
+      tokenFee=false
+      //curve H point
+      pointHX=&quot;19172955941344617222923168298456110557655645809646772800021167670156933290312&quot;
+      pointHY=&quot;21116962883761739586121793871108889864627195706475546685847911817475098399811&quot;
+      //电路最大支持1024个叶子hash，10 level， 配置可以小于1024,但不能大于
+      maxTreeLeaves=1024
+      //管理员列表
+      mixApprs=[]
+//系统中所有的fork,默认用chain33的测试网络的
+//但是我们可以替换
+[fork]
+  [fork.system]
+    ForkChainParamV1 = 0
+    ForkCheckTxDup = 0
+    ForkBlockHash = 1
+    ForkMinerTime = 0
+    ForkTransferExec = 0
+    ForkExecKey = 0
+    ForkTxGroup = 0
+    ForkResetTx0 = 0
+    ForkWithdraw = 0
+    ForkExecRollback = 0
+    ForkCheckBlockTime = 0
+    ForkTxHeight = 0
+    ForkTxGroupPara = 0
+    ForkChainParamV2 = 0
+    ForkMultiSignAddress = 0
+    ForkStateDBSet = 0
+    ForkLocalDBAccess = 0
+    ForkBlockCheck = 0
+    ForkBase58AddressCheck = 0
+    //平行链上使能平行链执行器如user.p.x.coins执行器的注册，缺省为0，对已有的平行链需要设置一个fork高度
+    ForkEnableParaRegExec=0
+    ForkCacheDriver=0
+    //fork6.3
+    ForkTicketFundAddrV1=-1 
+    //主链和平行链都使用同一个fork高度
+    ForkRootHash=7200000
+  [fork.sub]
+    [fork.sub.coins]
+      Enable = 0
+    [fork.sub.ticket]
+      Enable = 0
+      ForkTicketId = 0
+      ForkTicketVrf = 0
+    [fork.sub.retrieve]
+      Enable = 0
+      ForkRetrive = 0
+      ForkRetriveAsset = 0
+    [fork.sub.hashlock]
+      Enable = 0
+      ForkBadRepeatSecret = 0
+    [fork.sub.manage]
+      Enable = 0
+      ForkManageExec = 0
+      //manage增加配置需要经过autonomy board成员审批，平行链不开启
+      ForkManageAutonomyEnable=-1
+    [fork.sub.token]
+      Enable = 0
+      ForkTokenBlackList = 0
+      ForkBadTokenSymbol = 0
+      ForkTokenPrice = 0
+      ForkTokenSymbolWithNumber = 0
+      ForkTokenCheck = 100000
+    [fork.sub.trade]
+      Enable = 0
+      ForkTradeBuyLimit = 0
+      ForkTradeAsset = 0
+      ForkTradeID = 0
+      ForkTradeFixAssetDB = 0
+      ForkTradePrice = 0
+    [fork.sub.paracross]
+      Enable=0
+      ForkParacrossWithdrawFromParachain=0
+      ForkParacrossCommitTx=0
+      ForkLoopCheckCommitTxDone=0
+      //仅平行链适用，自共识分阶段开启，缺省是0，若对应主链高度7200000之前开启过自共识，需要重新配置此分叉，并为之前自共识设置selfConsensEnablePreContract配置项
+      ForkParaSelfConsStages=0
+      ForkParaAssetTransferRbk=0
+      ForkParaSupervision=0
+      //仅平行链适用，开启挖矿交易的高度，已有代码版本可能未在0高度开启挖矿，需要设置这个高度，新版本默认从0开启挖矿，通过交易配置分阶段奖励
+      ForkParaFullMinerHeight=0
+      //仅平行链适用，在旧的版本中计算blockTxHash输入高度为0，需要在此高度后统一采用新的主链高度值，旧的版本需要设置此分叉高度，新版本缺省为0即可
+      ForkParaRootHash=0
+      //nodegroup approve需要经过autonomy board成员审批,平行链不开启
+      ForkParaAutonomySuperGroup=-1
+    [fork.sub.evm]
+      Enable = 0
+      ForkEVMState = 0
+      ForkEVMABI = 0
+      ForkEVMFrozen = 0
+      ForkEVMKVHash = 0
+    [fork.sub.blackwhite]
+      Enable = 0
+      ForkBlackWhiteV2 = 0
+    [fork.sub.cert]
+      Enable = 0
+    [fork.sub.guess]
+      Enable = 0
+    [fork.sub.lottery]
+      Enable = 0
+    [fork.sub.oracle]
+      Enable = 0
+    [fork.sub.relay]
+      Enable = 0
+    [fork.sub.norm]
+      Enable = 0
+    [fork.sub.pokerbull]
+      Enable = 0
+    [fork.sub.privacy]
+      Enable = 0
+    [fork.sub.game]
+      Enable = 0
+    [fork.sub.multisig]
+      Enable = 0
+    [fork.sub.unfreeze]
+      Enable = 0
+      ForkTerminatePart = 0
+      ForkUnfreezeIDX = 0
+    [fork.sub.autonomy]
+      Enable = 0
+    [fork.sub.jsvm]
+      Enable = 0
+    [fork.sub.issuance]
+      Enable = 0
+      ForkIssuanceTableUpdate = 0
+    [fork.sub.collateralize]
+      Enable = 0
+      ForkCollateralizeTableUpdate = 0
+    //对已有的平行链如果不是从0开始同步数据，需要设置这个kvmvccmavl的对应平行链高度的fork，如果从0开始同步，statehash会跟以前mavl的不同
+    [fork.sub.store-kvmvccmavl]
+      ForkKvmvccmavl = 100000
+    [fork.sub.storage]
+      Enable = 0
+    [fork.sub.evm]
+      Enable = 0
+[pprof]
+  listenAddr = &quot;localhost:6061&quot;
+[metrics]
+  //是否使能发送metrics数据的发送
+  enableMetrics=false
+  //数据保存模式
+  dataEmitMode=&quot;influxdb&quot;
+  [metrics.sub]
+    [metrics.sub.influxdb]
+      //以纳秒为单位的发送间隔
+      duration = 1000000000
+      url = &quot;http://influxdb:8086&quot;
+      database = &quot;chain33metrics&quot;
+      username = &quot;&quot;
+      password = &quot;&quot;
+      namespace = &quot;&quot;
+//exchange合约相关配置
+[mver.exec.sub.exchange]
+//银行帐户列表（现第一个地址用来收取手续费）
+banks = [&quot;1PTGVR7TUm1MJUH7M1UNcKBGMvfJ7nCrnN&quot;]#Fee
+//币种配置，
+//rate每笔手续费率,配置时需*1e8(如：收取每笔交易千分之一的手续费，rate=100000)
+//minFee最小手续费,配置时需*1e8(如：最小手续费收取1个，minFee=100000000)
+coins = [
+    { name = &quot;bty&quot;, rate = 100000, minFee = 0 },
+    { name = &quot;coins.bty&quot;, rate = 100000, minFee = 0 },
+    { name = &quot;ETH&quot;, rate = 100000, minFee = 0 },
+    { name = &quot;USDT&quot;, rate = 100000, minFee = 0 },
+]
+[fork.sub.exchange]
+Enable=0
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br><span class="line-number">298</span><br><span class="line-number">299</span><br><span class="line-number">300</span><br><span class="line-number">301</span><br><span class="line-number">302</span><br><span class="line-number">303</span><br><span class="line-number">304</span><br><span class="line-number">305</span><br><span class="line-number">306</span><br><span class="line-number">307</span><br><span class="line-number">308</span><br><span class="line-number">309</span><br><span class="line-number">310</span><br><span class="line-number">311</span><br><span class="line-number">312</span><br><span class="line-number">313</span><br><span class="line-number">314</span><br><span class="line-number">315</span><br><span class="line-number">316</span><br><span class="line-number">317</span><br><span class="line-number">318</span><br><span class="line-number">319</span><br><span class="line-number">320</span><br><span class="line-number">321</span><br><span class="line-number">322</span><br><span class="line-number">323</span><br><span class="line-number">324</span><br><span class="line-number">325</span><br><span class="line-number">326</span><br><span class="line-number">327</span><br><span class="line-number">328</span><br><span class="line-number">329</span><br><span class="line-number">330</span><br><span class="line-number">331</span><br><span class="line-number">332</span><br><span class="line-number">333</span><br><span class="line-number">334</span><br><span class="line-number">335</span><br><span class="line-number">336</span><br><span class="line-number">337</span><br><span class="line-number">338</span><br><span class="line-number">339</span><br><span class="line-number">340</span><br><span class="line-number">341</span><br><span class="line-number">342</span><br><span class="line-number">343</span><br><span class="line-number">344</span><br><span class="line-number">345</span><br><span class="line-number">346</span><br><span class="line-number">347</span><br><span class="line-number">348</span><br><span class="line-number">349</span><br><span class="line-number">350</span><br><span class="line-number">351</span><br><span class="line-number">352</span><br></div></div></div> <!----> <div class="content__content-bottom"></div> <footer class="page-meta"><div class="edit-link"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon edit-icon"><path d="M117.953 696.992 64.306 959.696l265.931-49.336 450.204-452.505-212.284-213.376-450.204 452.513zm496.384-296.326L219.039 797.993l-46.108-46.34L568.233 354.33l46.104 46.335zm345.357-122.99-114.45 115.04-212.288-213.377 114.45-115.035 212.288 213.371zm0 0" fill="currentColor"></path></svg> <a href="https://github.com/bityuan/bty-docs/edit/main/zh/guide/05.进阶/2.系统使用/5.配置介绍/2.平行链环境配置.md" target="_blank" rel="noopener noreferrer">编辑此页</a></div> <!----> <!----></footer> <!----> <!----> <!----> <div class="content__page-bottom"></div></main> <!----></div><div class="global-ui"><!----><div tabindex="-1" role="dialog" aria-hidden="true" class="pswp"><div class="pswp__bg"></div> <div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div> <div class="pswp__item"></div> <div class="pswp__item"></div></div> <div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div> <button class="pswp__button pswp__button--close"></button> <button class="pswp__button pswp__button--share"></button> <button class="pswp__button pswp__button--fs"></button> <button class="pswp__button pswp__button--zoom"></button> <div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div> <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div> <button class="pswp__button pswp__button--arrow--left"></button> <button class="pswp__button pswp__button--arrow--right"></button> <div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div></div></div>
+    <script src="/assets/js/app.8fa71e60.js" defer></script><script src="/assets/js/vendors~layout-Layout.a19c9031.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.273fc434.js" defer></script><script src="/assets/js/page-平行链环境配置.320611b1.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound~layout-Slide.4a182f2f.js" defer></script>
+  </body>
+</html>
